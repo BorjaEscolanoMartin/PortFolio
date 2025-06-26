@@ -44,7 +44,7 @@ export default function Hero() {
       <div className="absolute left-6 top-16 hidden lg:flex flex-col justify-between items-center w-8" style={{height: 'calc(100% - 32px - 350px)'}}>{/* Icono de móvil */}
         <div className="flex flex-col items-center">
           <img 
-            src="/iconotelefono.svg" 
+            src={`${import.meta.env.BASE_URL}iconotelefono.svg`} 
             alt="Phone icon"
             className="w-6 h-6"
           />
@@ -66,7 +66,7 @@ export default function Hero() {
         {/* Flecha hacia abajo personalizada */}
         <div className="flex flex-col items-center ml-1">
           <img 
-            src="/flecha.png" 
+            src={`${import.meta.env.BASE_URL}flecha.png`} 
             alt="Scroll down arrow"
             className="w-20 h-30 object-cover"
           />
@@ -82,7 +82,7 @@ export default function Hero() {
         {/* Flecha hacia abajo personalizada */}
         <div className="flex flex-col items-center">
           <img 
-            src="/flecha.png" 
+            src={`${import.meta.env.BASE_URL}flecha.png`} 
             alt="Scroll down arrow"
             className="w-5 h-60 object-cover"
           />
@@ -129,7 +129,7 @@ export default function Hero() {
         <div className="hidden md:flex w-1/3 h-full items-center justify-center relative transform -translate-x-12">
           <div className="relative">
             <img
-              src="/Yop.png" 
+              src={`${import.meta.env.BASE_URL}Yop.png`} 
               alt="Desarrollador"
               className="max-w-full h-auto max-h-[450px] object-cover"
             />
@@ -138,8 +138,8 @@ export default function Hero() {
               className="absolute inset-0 pointer-events-none"
               style={{
                 background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 8%, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.1) 65%, transparent 85%)',
-                WebkitMask: 'url("/Yop.png") center/cover no-repeat',
-                mask: 'url("/Yop.png") center/cover no-repeat',
+                WebkitMask: `url("${import.meta.env.BASE_URL}Yop.png") center/cover no-repeat`,
+                mask: `url("${import.meta.env.BASE_URL}Yop.png") center/cover no-repeat`,
                 WebkitMaskComposite: 'source-in',
                 maskComposite: 'intersect',
                 WebkitMaskPosition: 'center center',

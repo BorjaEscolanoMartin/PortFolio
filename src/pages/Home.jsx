@@ -11,7 +11,7 @@ export default function Home() {
       <div 
         className="relative"
         style={{
-          backgroundImage: 'url("/fondo.png")',
+          backgroundImage: `url("${import.meta.env.BASE_URL}fondo.png")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -53,7 +53,7 @@ export default function Home() {
       <div 
         className="relative"
         style={{
-          backgroundImage: 'url("/fondo2.png")',
+          backgroundImage: `url("${import.meta.env.BASE_URL}fondo2.png")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

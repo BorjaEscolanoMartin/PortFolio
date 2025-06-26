@@ -5,7 +5,7 @@ export default function Header() {
       <div className="px-6 py-4 flex justify-between items-center">
         {/* Logo o nombre */}
         <div className="flex items-center gap-3">
-          <img src="/IconoB.png" alt="Logo" className="w-8 h-8" />
+          <img src={`${import.meta.env.BASE_URL}IconoB.png`} alt="Logo" className="w-8 h-8" />
           <div className="text-xl font-bold tracking-wide">BEM_DEV</div>
         </div>        
         {/* Navegación */}

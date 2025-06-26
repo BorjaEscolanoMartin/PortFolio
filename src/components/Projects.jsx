@@ -6,7 +6,7 @@ export default function Projects() {
       title: "Pets - Cuidado de Mascotas",
       description: "Proyecto final de grado para el alojamiento de mascotas con sistema de reservas y perfiles de usuarios, cuidadores y empresas. Sistemas de búsqueda y de notificaciones en tiempo real.",
       technologies: ["React", "Laravel", "Docker", "PostgreSQL", "Tailwind CSS", "Vite", "JavaScript", "Node.js"],
-      image: "/Pets.png", // Placeholder - puedes cambiar por imagen real
+      image: `${import.meta.env.BASE_URL}Pets.png`, // Placeholder - puedes cambiar por imagen real
       githubUrl: "#",
       demoUrl: "#",
       status: "Completado"
@@ -16,7 +16,7 @@ export default function Projects() {
       title: "Portfolio Personal",
       description: "Sitio web personal moderno y responsive diseñado para mostrar proyectos, habilidades y experiencia profesional. Optimizado para rendimiento y SEO.",
       technologies: ["React", "Vite", "Tailwind CSS", "JavaScript"],
-      image: "/Portfolio.png", // Placeholder - puedes cambiar por imagen real
+      image: `${import.meta.env.BASE_URL}Portfolio.png`, // Placeholder - puedes cambiar por imagen real
       githubUrl: "#",
       demoUrl: "#",
       status: "En desarrollo"
@@ -26,7 +26,7 @@ export default function Projects() {
       title: "E-commerce Dashboard",
       description: "Panel de administración para comercio electrónico con análisis de ventas, gestión de inventario y control de usuarios. Interfaz intuitiva con gráficos interactivos.",
       technologies: ["Vue.js", "Node.js", "Express", "MongoDB"],
-      image: "/fondo.png", // Placeholder - puedes cambiar por imagen real
+      image: `${import.meta.env.BASE_URL}fondo.png`, // Placeholder - puedes cambiar por imagen real
       githubUrl: "#",
       demoUrl: "#",
       status: "Próximamente"
