@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Ryver Sans Font Faces */
+@font-face {
+  font-family: 'Ryver Sans';
+  src: url('/fonts/RyverSans Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ryver Sans';
+  src: url('/fonts/RyverSans Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ryver Sans';
+  src: url('/fonts/Ryver Sans.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ryver Sans';
+  src: url('/fonts/RyverSans Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ryver Sans';
+  src: url('/fonts/RyverSans Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ryver Sans';
+  src: url('/fonts/RyverSans Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  background-color: black;
+  font-family: 'Ryver Sans', sans-serif;
+}
