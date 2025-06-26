@@ -126,7 +126,7 @@ export default function Hero() {
         </div>
 
         {/* Imagen - Lado derecho */}
-        <div className="hidden md:flex w-1/3 h-full items-center justify-center relative transform -translate-x-12">
+        <div className="hidden md:flex w-1/3 h-full items-center justify-center relative transform md:translate-x-4 lg:-translate-x-12">
           <div className="relative">
             <img
               src={`${import.meta.env.BASE_URL}Yop.png`} 
