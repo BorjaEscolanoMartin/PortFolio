@@ -5,7 +5,7 @@ export default function Projects() {
       id: 1,
       title: "Pets - Cuidado de Mascotas",
       description: "Proyecto final de grado para el alojamiento de mascotas con sistema de reservas y perfiles de usuarios, cuidadores y empresas. Sistemas de búsqueda y de notificaciones en tiempo real.",
-      technologies: ["React", "Laravel", "Docker", "PostgreSQL", "Tailwind CSS", "Vite", "JavaScript", "Node.js"],
+      technologies: ["React", "Laravel", "Docker", "PostgreSQL", "Tailwind CSS", "Vite", "JavaScript", "Node.js", "AWS"],
       image: `${import.meta.env.BASE_URL}Pets.png`, 
       githubUrl: "https://github.com/BorjaEscolanoMartin/pet-hosting-platform",
       demoUrl: "http://51.20.38.155:5173/",
@@ -125,6 +125,8 @@ export default function Projects() {
                 <div className="flex gap-3">
                   <a
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 bg-gray-700/50 hover:bg-gray-600/50 text-white text-center py-2 px-4 rounded-lg transition-all duration-300 hover:transform hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -134,6 +136,8 @@ export default function Projects() {
                   </a>
                   <a
                     href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 bg-lime-400/20 hover:bg-lime-400/30 text-lime-400 text-center py-2 px-4 rounded-lg transition-all duration-300 hover:transform hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
