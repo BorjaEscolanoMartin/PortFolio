@@ -8,7 +8,7 @@ export default function Projects() {
       technologies: ["React", "Laravel", "Docker", "PostgreSQL", "Tailwind CSS", "Vite", "JavaScript", "Node.js"],
       image: `${import.meta.env.BASE_URL}Pets.png`, 
       githubUrl: "https://github.com/BorjaEscolanoMartin/pet-hosting-platform",
-      demoUrl: "#",
+      demoUrl: "http://51.20.38.155:5173/",
       status: "Completado"
     },
     {
@@ -18,7 +18,7 @@ export default function Projects() {
       technologies: ["React", "Vite", "Tailwind CSS", "JavaScript"],
       image: `${import.meta.env.BASE_URL}Portfolio.png`, 
       githubUrl: "https://github.com/BorjaEscolanoMartin/PortFolio",
-      demoUrl: "#",
+      demoUrl: "https://borjaescolanomartin.github.io/PortFolio/",
       status: "En desarrollo"
     },
     {
