@@ -1,7 +1,93 @@
 // src/components/Contact.jsx
 import { FaEnvelope, FaLinkedin, FaGithub, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', 'alternatives', null
+  const [emailData, setEmailData] = useState(null); // Para almacenar los datos del email
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleCopyMessage = async () => {
+    try {
+      await navigator.clipboard.writeText(emailData?.body || '');
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
+    } catch (err) {
+      console.error('Error al copiar:', err);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Validación básica
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Crear el enlace mailto con los datos del formulario
+      const subject = formData.subject || 'Consulta desde Portfolio';
+      const body = `Hola Borja,
+
+Mi nombre es ${formData.name}.
+
+${formData.message}
+
+Saludos,
+${formData.name}
+Email: ${formData.email}`;
+
+      const mailtoLink = `mailto:escolanomartinborja@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Almacenar los datos del email para las alternativas
+      setEmailData({
+        subject,
+        body,
+        mailtoLink
+      });
+      
+      // Intentar abrir el cliente de correo
+      window.location.href = mailtoLink;
+      
+      // Dar tiempo para que se abra el cliente y luego mostrar alternativas
+      setTimeout(() => {
+        setSubmitStatus('alternatives');
+        setIsSubmitting(false);
+        // Limpiar formulario
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      }, 1500);
+
+    } catch {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section className="text-white pt-2 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -105,7 +191,7 @@ export default function Contact() {
                   <FaLinkedin className="text-xl" />
                 </a>
                 <a
-                  href="https://github.com/tuusuario"
+                  href="https://github.com/BorjaEscolanoMartin"
                   target="_blank"
                   rel="noreferrer"
                   className="w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center text-white hover:bg-lime-400/20 hover:text-lime-400 transition-all duration-300 hover:scale-105"
@@ -122,32 +208,83 @@ export default function Contact() {
               Envíame un Mensaje
             </h3>
             
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Mensaje de estado */}
+              {submitStatus === 'success' && (
+                <div className="bg-lime-400/10 border border-lime-400/30 rounded-lg p-4 text-lime-400">
+                  <p className="font-semibold text-center">¡Formulario procesado correctamente!</p>
+                  <p className="text-sm text-center mt-2">
+                    Se ha abierto tu cliente de correo con todos los datos del formulario. 
+                    <br />
+                    <span className="font-medium">Para completar el envío, haz clic en "Enviar" en tu aplicación de correo.</span>
+                  </p>
+                </div>
+              )}
+
+              {submitStatus === 'alternatives' && (
+                <div className="bg-lime-400/10 border border-lime-400/30 rounded-lg p-4 text-lime-400">
+                  <p className="font-semibold text-center mb-3">¡Formulario procesado!</p>
+                  <p className="text-sm text-center mb-4">
+                    Si no se abrió tu cliente de correo, puedes usar estas alternativas:
+                  </p>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=escolanomartinborja@gmail.com&su=' + encodeURIComponent(emailData?.subject || '') + '&body=' + encodeURIComponent(emailData?.body || ''), '_blank')}
+                      className="w-full bg-lime-400/20 hover:bg-lime-400/30 border border-lime-400/50 text-lime-400 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      Abrir Gmail Web
+                    </button>
+                    <button
+                      onClick={handleCopyMessage}
+                      className="w-full bg-gray-600/50 hover:bg-gray-600/70 border border-gray-500/50 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      {copySuccess ? '¡Copiado!' : 'Copiar mensaje'}
+                    </button>
+                  </div>
+                  <p className="text-xs text-center mt-2 text-gray-400">
+                    Email: escolanomartinborja@gmail.com
+                  </p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="bg-red-400/10 border border-red-400/30 rounded-lg p-4 text-red-400 text-center">
+                  <p className="font-semibold">Error en el formulario</p>
+                  <p className="text-sm mt-1">Por favor, completa todos los campos obligatorios.</p>
+                </div>
+              )}
+
               {/* Nombre */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Nombre completo
+                  Nombre completo *
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-lime-400/50 focus:ring-1 focus:ring-lime-400/50 transition-colors"
                   placeholder="Tu nombre"
+                  required
                 />
               </div>
 
               {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Correo electrónico
+                  Correo electrónico *
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-lime-400/50 focus:ring-1 focus:ring-lime-400/50 transition-colors"
                   placeholder="tu@email.com"
+                  required
                 />
               </div>
 
@@ -160,6 +297,8 @@ export default function Contact() {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-lime-400/50 focus:ring-1 focus:ring-lime-400/50 transition-colors"
                   placeholder="¿En qué te puedo ayudar?"
                 />
@@ -168,40 +307,35 @@ export default function Contact() {
               {/* Mensaje */}
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Mensaje
+                  Mensaje *
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows="6"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-lime-400/50 focus:ring-1 focus:ring-lime-400/50 transition-colors resize-none"
                   placeholder="Cuéntame sobre tu proyecto..."
+                  required
                 ></textarea>
               </div>
 
               {/* Botón de envío */}
               <button
                 type="submit"
-                className="w-full bg-lime-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-lime-300 transition-all duration-300 hover:transform hover:scale-[1.02] flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className={`w-full px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                  isSubmitting 
+                    ? 'bg-gray-500 text-gray-300 cursor-not-allowed' 
+                    : 'bg-lime-400 text-black hover:bg-lime-300 hover:transform hover:scale-[1.02]'
+                }`}
               >
                 <FaEnvelope className="text-sm" />
-                Enviar Mensaje
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
             </form>
           </div>
-        </div>
-
-        {/* Call to action final */}
-        <div className="text-center mt-20 pt-12 border-t border-gray-700/50">          <p className="text-gray-400 mb-4">
-            ¿Prefieres una llamada directa?
-          </p>
-          <a
-            href="tel:+34628406752"
-            className="inline-flex items-center gap-2 bg-gray-800/50 text-white px-6 py-3 rounded-lg font-semibold hover:bg-lime-400 hover:text-black transition-all duration-300 hover:transform hover:scale-105"
-          >
-            <FaPhone className="text-sm" />
-            Llamar Ahora
-          </a>
         </div>
       </div>
     </section>

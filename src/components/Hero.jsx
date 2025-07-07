@@ -18,8 +18,42 @@ import {
   SiPhp,
   SiMysql 
 } from 'react-icons/si';
+import { useState } from 'react';
 
 export default function Hero() {
+  const [showEmailModal, setShowEmailModal] = useState(false);
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    
+    // Intentar mailto primero
+    const mailtoLink = "mailto:escolanomartinborja@gmail.com?subject=Consulta%20desde%20el%20portfolio&body=Hola%20Borja%2C%20te%20escribo%20porque...";
+    
+    // Crear enlace temporal
+    const tempLink = document.createElement('a');
+    tempLink.href = mailtoLink;
+    document.body.appendChild(tempLink);
+    tempLink.click();
+    document.body.removeChild(tempLink);
+    
+    // Si no funciona después de 2 segundos, mostrar modal
+    setTimeout(() => {
+      setShowEmailModal(true);
+    }, 2000);
+  };
+
+  const openGmail = () => {
+    window.open(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=escolanomartinborja@gmail.com&su=Consulta%20desde%20el%20portfolio&body=Hola%20Borja%2C%20te%20escribo%20porque...",
+      '_blank'
+    );
+    setShowEmailModal(false);
+  };
+
+  const closeModal = () => {
+    setShowEmailModal(false);
+  };
+
   const technologies = [
     { name: 'React', icon: FaReact, color: 'text-white' },
     { name: 'JavaScript', icon: FaJs, color: 'text-white' },
@@ -92,15 +126,20 @@ export default function Hero() {
         <div className="flex-grow"></div>
         
         <div className="flex flex-col gap-4 text-2xl">
-          <a href="https://github.com/tuusuario" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-white hover:text-lime-400 transition-colors duration-300">
+          <a href="https://github.com/BorjaEscolanoMartin/" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-white hover:text-lime-400 transition-colors duration-300">
             <FaGithub />
           </a>
           <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-white hover:text-lime-400 transition-colors duration-300">
             <FaLinkedin />
           </a>
-          <a href="mailto:escolanomartinborja@gmail.com" aria-label="Email" className="text-white hover:text-lime-400 transition-colors duration-300">
+          <button
+            onClick={handleEmailClick}
+            aria-label="Enviar email" 
+            title="Enviar email a escolanomartinborja@gmail.com"
+            className="text-white hover:text-lime-400 transition-colors duration-300 bg-transparent border-none cursor-pointer p-0 text-2xl"
+          >
             <FaEnvelope />
-          </a>
+          </button>
         </div>
       </div>        {/* Contenido principal - Layout con dos columnas */}      
       <div className="w-full max-w-7xl mx-auto px-6 z-10 relative lg:px-20 lg:ml-8 gap-2">
@@ -190,6 +229,43 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Modal personalizado para email */}
+      {showEmailModal && (
+        <div 
+          className="fixed inset-0 flex items-center justify-center z-50 px-4"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+        >
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-2xl">
+            <div className="text-center">
+              <div className="mb-4">
+                <FaEnvelope className="text-4xl text-lime-400 mx-auto mb-3" />
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  ¿No se abrió tu cliente de correo?
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Puedes contactarme en: <strong>escolanomartinborja@gmail.com</strong>
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={openGmail}
+                  className="flex-1 bg-lime-400 hover:bg-lime-500 text-black font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+                >
+                  Abrir Gmail
+                </button>
+                <button
+                  onClick={closeModal}
+                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
