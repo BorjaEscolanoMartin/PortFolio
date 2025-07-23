@@ -4,7 +4,7 @@ export default function Projects() {
     {
       id: 1,
       title: "Pets - Cuidado de Mascotas",
-      description: "Proyecto final de grado para el alojamiento de mascotas con sistema de reservas y perfiles de usuarios, cuidadores y empresas. Sistemas de búsqueda y de notificaciones en tiempo real.",
+      description: "Proyecto final de grado para el alojamiento de mascotas con sistema de reservas y perfiles de usuarios, cuidadores y empresas. Sistemas de búsqueda, notificaciones y chat en tiempo real.",
       technologies: ["React", "Laravel", "Docker", "PostgreSQL", "Tailwind CSS", "Vite", "JavaScript", "Node.js", "AWS"],
       image: `${import.meta.env.BASE_URL}Pets.png`, 
       githubUrl: "https://github.com/BorjaEscolanoMartin/pet-hosting-platform",

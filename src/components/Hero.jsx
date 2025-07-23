@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaMobileAlt, FaArrowDown } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaMobileAlt, FaArrowDown, FaDownload } from "react-icons/fa";
 import { 
   FaReact, 
   FaJs, 
@@ -129,7 +129,7 @@ export default function Hero() {
           <a href="https://github.com/BorjaEscolanoMartin/" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-white hover:text-lime-400 transition-colors duration-300">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-white hover:text-lime-400 transition-colors duration-300">
+          <a href="https://www.linkedin.com/in/borja-escolano-martin/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-white hover:text-lime-400 transition-colors duration-300">
             <FaLinkedin />
           </a>
           <button
@@ -147,21 +147,31 @@ export default function Hero() {
         <div className="flex items-center">
           {/* Contenido de texto - Lado izquierdo */}
           <div className="w-full md:w-2/3 flex items-center justify-center pr-2 lg:pl-16">
-          <div className="text-center md:text-left">
+          <div className="text-center lg:text-left">
             <p className="uppercase text-sm tracking-widest text-gray-400 mb-4">
               Disponible para trabajar
             </p>            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-normal">
               Desarrollador Web Full-Stack
             </h1>
-            <p className="mt-6 text-lg text-white max-w-xl md:pr-16">
+            <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
               Me especializo en crear experiencias web modernas con React, Laravel y Tailwind. Listo para asumir nuevos retos.
             </p>
-            <a
-              href="#proyectos"
-              className="inline-block mt-8 px-8 py-3 bg-lime-400 text-black font-semibold rounded-full hover:bg-lime-300 transition"
-            >
-              Ver proyectos
-            </a>          </div>
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
+              <a
+                href="#proyectos"
+                className="inline-block px-6 py-3 bg-lime-400 text-black font-semibold rounded-full hover:bg-lime-300 transition text-center w-50"
+              >
+                Ver proyectos
+              </a>
+              <a
+                href={`${import.meta.env.BASE_URL}CV.pdf`}
+                download="CV_Borja_Escolano_Martin.pdf"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-lime-400 text-lime-400 font-semibold rounded-full hover:bg-lime-400 hover:text-black transition w-50"
+              >
+                <FaDownload className="text-sm" />
+                Descargar CV
+              </a>
+            </div>          </div>
         </div>
 
         {/* Imagen - Lado derecho */}
@@ -193,7 +203,7 @@ export default function Hero() {
         <div className="mt-12 lg:mt-16 mb-14" id="tecnologias">
           <div className="space-y-8">
             {/* Primera fila - 8 iconos */}
-            <div className="flex justify-center items-center gap-8 md:gap-14 lg:gap-19">
+            <div className="flex justify-center items-center gap-6 md:gap-14 lg:gap-19">
               {technologies.slice(0, 8).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
@@ -211,7 +221,7 @@ export default function Hero() {
             </div>
 
             {/* Segunda fila - 7 iconos */}
-            <div className="flex justify-center items-center gap-8 md:gap-14 lg:gap-19">
+            <div className="flex justify-center items-center gap-6 md:gap-14 lg:gap-19">
               {technologies.slice(8, 15).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (

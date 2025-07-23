@@ -183,7 +183,7 @@ Email: ${formData.email}`;
               <h4 className="text-lg font-semibold text-white mb-4">Sígueme en</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://linkedin.com/in/tuusuario"
+                  href="https://www.linkedin.com/in/borja-escolano-martin/"
                   target="_blank"
                   rel="noreferrer"
                   className="w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center text-white hover:bg-lime-400/20 hover:text-lime-400 transition-all duration-300 hover:scale-105"
