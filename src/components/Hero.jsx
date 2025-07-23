@@ -154,7 +154,7 @@ export default function Hero() {
               Desarrollador Web Full-Stack
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Me especializo en crear experiencias web modernas con React, Laravel y Tailwind. Listo para asumir nuevos retos.
+              Técnico Superior en Desarrollo de Aplicaciones Web con sólida formación en programación front-end y back-end. Enfocado en la calidad del código, la usabilidad y el trabajo en equipo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a
