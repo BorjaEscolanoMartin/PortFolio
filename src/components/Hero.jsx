@@ -201,19 +201,19 @@ export default function Hero() {
         </div>
         </div>        {/* Sección de TechStack integrada - debajo de las dos columnas */}
         <div className="mt-12 lg:mt-16 mb-14" id="tecnologias">
-          <div className="space-y-8">
+          <div className="space-y-6 px-6 sm:px-10 md:px-12 lg:px-14">
             {/* Primera fila - 8 iconos */}
-            <div className="flex justify-center items-center gap-6 md:gap-14 lg:gap-19">
+            <div className="grid grid-cols-8 sm:grid-cols-8 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
               {technologies.slice(0, 8).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
                   <div 
                     key={index} 
-                    className="group flex items-center justify-center"
+                    className="group flex items-center justify-center w-full"
                     title={tech.name}
                   >
                     <IconComponent 
-                      className={`${tech.size || 'text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`} 
+                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`} 
                     />
                   </div>
                 );
@@ -221,21 +221,22 @@ export default function Hero() {
             </div>
 
             {/* Segunda fila - 7 iconos */}
-            <div className="flex justify-center items-center gap-6 md:gap-14 lg:gap-19">
+            <div className="grid grid-cols-7 sm:grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
               {technologies.slice(8, 15).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
                   <div 
                     key={index + 8} 
-                    className="group flex items-center justify-center"
+                    className="group flex items-center justify-center w-full"
                     title={tech.name}
                   >
                     <IconComponent 
-                      className={`${tech.size || 'text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`} 
+                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`} 
                     />
                   </div>
                 );
-              })}            </div>
+              })}
+            </div>
           </div>
         </div>
       </div>
