@@ -1,22 +1,29 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaMobileAlt, FaArrowDown, FaDownload } from "react-icons/fa";
-import { 
-  FaReact, 
-  FaJs, 
+import {
+  FaReact,
+  FaJs,
   FaJava,
-  FaHtml5, 
-  FaCss3Alt, 
-  FaNodeJs, 
-  FaGitAlt
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
+  FaGitAlt,
+  FaPython
 } from 'react-icons/fa';
-import { 
-  SiTailwindcss, 
-  SiVite, 
-  SiMongodb,
-  SiExpress,
+import {
+  SiTailwindcss,
+  SiVite,
   SiDocker,
   SiLaravel,
   SiPhp,
-  SiMysql 
+  SiMysql,
+  SiPostgresql,
+  SiFirebase,
+  SiPandas,
+  SiNumpy,
+  SiScikitlearn,
+  SiTensorflow,
+  SiJupyter,
+  SiGooglecolab
 } from 'react-icons/si';
 import { useState } from 'react';
 
@@ -55,21 +62,32 @@ export default function Hero() {
   };
 
   const technologies = [
+    // Frontend (fila 1 - 7 iconos)
     { name: 'React', icon: FaReact, color: 'text-white' },
     { name: 'JavaScript', icon: FaJs, color: 'text-white' },
     { name: 'Java', icon: FaJava, color: 'text-white' },
-    { name: 'PHP', icon: SiPhp, color: 'text-white', size: 'text-4xl md:text-5xl lg:text-6xl' },
     { name: 'HTML5', icon: FaHtml5, color: 'text-white' },
     { name: 'CSS3', icon: FaCss3Alt, color: 'text-white' },
     { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-white' },
-    { name: 'MySQL', icon: SiMysql, color: 'text-white', size: 'text-4xl md:text-5xl lg:text-6xl' },
-    { name: 'Node.js', icon: FaNodeJs, color: 'text-white' },
-    { name: 'Express', icon: SiExpress, color: 'text-white' },
-    { name: 'Laravel', icon: SiLaravel, color: 'text-white' },
-    { name: 'MongoDB', icon: SiMongodb, color: 'text-white' },
-    { name: 'Docker', icon: SiDocker, color: 'text-white' },
     { name: 'Vite', icon: SiVite, color: 'text-white' },
+    // Backend + BD + Herramientas (fila 2 - 9 iconos)
+    { name: 'PHP', icon: SiPhp, color: 'text-white', size: 'text-4xl md:text-5xl lg:text-6xl' },
+    { name: 'Laravel', icon: SiLaravel, color: 'text-white' },
+    { name: 'Node.js', icon: FaNodeJs, color: 'text-white' },
+    { name: 'Firebase', icon: SiFirebase, color: 'text-white' },
+    { name: 'MySQL', icon: SiMysql, color: 'text-white', size: 'text-4xl md:text-5xl lg:text-6xl' },
+    { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-white' },
     { name: 'Git', icon: FaGitAlt, color: 'text-white' },
+    { name: 'GitHub', icon: FaGithub, color: 'text-white' },
+    { name: 'Docker', icon: SiDocker, color: 'text-white' },
+    // IA y Big Data (fila 3 - 7 iconos)
+    { name: 'Python', icon: FaPython, color: 'text-white' },
+    { name: 'Pandas', icon: SiPandas, color: 'text-white' },
+    { name: 'NumPy', icon: SiNumpy, color: 'text-white' },
+    { name: 'Scikit-learn', icon: SiScikitlearn, color: 'text-white' },
+    { name: 'TensorFlow', icon: SiTensorflow, color: 'text-white' },
+    { name: 'Jupyter', icon: SiJupyter, color: 'text-white' },
+    { name: 'Google Colab', icon: SiGooglecolab, color: 'text-white' },
   ];
   return (    <section
         className="relative text-white min-h-[400px] md:min-h-[550px] lg:min-h-[550px] flex items-start pt-16 pb-16 overflow-hidden"
@@ -154,7 +172,7 @@ export default function Hero() {
               Desarrollador Web Full-Stack
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Técnico Superior en Desarrollo de Aplicaciones Web con sólida formación en programación front-end y back-end. Enfocado en la calidad del código, la usabilidad y el trabajo en equipo.
+              Desarrollo aplicaciones web modernas con un stack orientado a frontend, backend, APIs, bases de datos y despliegue. He trabajado en proyectos con autenticación, reservas, chat en tiempo real, notificaciones y actualmente curso una Especialización en IA y Big Data.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a
@@ -165,7 +183,7 @@ export default function Hero() {
               </a>
               <a
                 href={`${import.meta.env.BASE_URL}CV.pdf`}
-                download="CV_Borja_Escolano_Martin.pdf"
+                download="CV.pdf"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-lime-400 text-lime-400 font-semibold rounded-full hover:bg-lime-400 hover:text-black transition w-50"
               >
                 <FaDownload className="text-sm" />
@@ -180,10 +198,8 @@ export default function Hero() {
             <img
               src={`${import.meta.env.BASE_URL}Yop.webp`}
               alt="Foto de Borja Escolano, desarrollador web full-stack"
-              width="700"
-              height="1000"
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
               className="max-w-full h-auto max-h-[450px] object-cover"
             />
             {/* Sombreado negro con máscara para seguir la forma de la imagen */}
@@ -206,36 +222,54 @@ export default function Hero() {
         </div>        {/* Sección de TechStack integrada - debajo de las dos columnas */}
         <div className="mt-12 lg:mt-16 mb-14" id="tecnologias">
           <div className="space-y-6 px-6 sm:px-10 md:px-12 lg:px-14">
-            {/* Primera fila - 8 iconos */}
-            <div className="grid grid-cols-8 sm:grid-cols-8 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
-              {technologies.slice(0, 8).map((tech, index) => {
+            {/* Primera fila - Frontend (7 iconos) */}
+            <div className="grid grid-cols-7 sm:grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+              {technologies.slice(0, 7).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="group flex items-center justify-center w-full"
                     title={tech.name}
                   >
-                    <IconComponent 
-                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`} 
+                    <IconComponent
+                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`}
                     />
                   </div>
                 );
               })}
             </div>
 
-            {/* Segunda fila - 7 iconos */}
-            <div className="grid grid-cols-7 sm:grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
-              {technologies.slice(8, 15).map((tech, index) => {
+            {/* Segunda fila - Backend + BD + Herramientas (9 iconos) */}
+            <div className="grid grid-cols-9 sm:grid-cols-9 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+              {technologies.slice(7, 16).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
-                  <div 
-                    key={index + 8} 
+                  <div
+                    key={index + 7}
                     className="group flex items-center justify-center w-full"
                     title={tech.name}
                   >
-                    <IconComponent 
-                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`} 
+                    <IconComponent
+                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Tercera fila - IA y Big Data (7 iconos) */}
+            <div className="grid grid-cols-7 sm:grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+              {technologies.slice(16, 23).map((tech, index) => {
+                const IconComponent = tech.icon;
+                return (
+                  <div
+                    key={index + 16}
+                    className="group flex items-center justify-center w-full"
+                    title={tech.name}
+                  >
+                    <IconComponent
+                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`}
                     />
                   </div>
                 );
