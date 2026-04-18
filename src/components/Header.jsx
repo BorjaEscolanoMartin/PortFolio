@@ -18,7 +18,7 @@ export default function Header() {
       <div className="px-6 py-4 flex justify-between items-center">
         {/* Logo o nombre */}
         <a href="#inicio" className="flex items-center gap-3 hover:opacity-80 transition-opacity" onClick={closeMenu}>
-          <img src={`${import.meta.env.BASE_URL}IconoB.png`} alt="Logo" className="w-8 h-8" />
+          <img src={`${import.meta.env.BASE_URL}IconoB.webp`} alt="Logo BEM_DEV" width="32" height="32" className="w-8 h-8" />
           <div className="text-xl font-bold tracking-wide">BEM_DEV</div>
         </a>        
         {/* Navegación desktop */}

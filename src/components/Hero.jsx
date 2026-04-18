@@ -178,8 +178,12 @@ export default function Hero() {
         <div className="hidden md:flex w-1/3 h-full items-center justify-center relative transform md:translate-x-4 lg:-translate-x-12">
           <div className="relative">
             <img
-              src={`${import.meta.env.BASE_URL}Yop.png`} 
-              alt="Desarrollador"
+              src={`${import.meta.env.BASE_URL}Yop.webp`}
+              alt="Foto de Borja Escolano, desarrollador web full-stack"
+              width="700"
+              height="1000"
+              loading="eager"
+              fetchpriority="high"
               className="max-w-full h-auto max-h-[450px] object-cover"
             />
             {/* Sombreado negro con máscara para seguir la forma de la imagen */}
@@ -187,8 +191,8 @@ export default function Hero() {
               className="absolute inset-0 pointer-events-none"
               style={{
                 background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 8%, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.1) 65%, transparent 85%)',
-                WebkitMask: `url("${import.meta.env.BASE_URL}Yop.png") center/cover no-repeat`,
-                mask: `url("${import.meta.env.BASE_URL}Yop.png") center/cover no-repeat`,
+                WebkitMask: `url("${import.meta.env.BASE_URL}Yop.webp") center/cover no-repeat`,
+                mask: `url("${import.meta.env.BASE_URL}Yop.webp") center/cover no-repeat`,
                 WebkitMaskComposite: 'source-in',
                 maskComposite: 'intersect',
                 WebkitMaskPosition: 'center center',
