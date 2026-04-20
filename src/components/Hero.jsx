@@ -2,15 +2,16 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaMobileAlt, FaArrowDown, FaDownload 
 import {
   FaReact,
   FaJs,
-  FaJava,
   FaHtml5,
   FaCss3Alt,
   FaNodeJs,
   FaGitAlt,
-  FaPython
+  FaPython,
+  FaAws
 } from 'react-icons/fa';
 import {
   SiTailwindcss,
+  SiTypescript,
   SiVite,
   SiDocker,
   SiLaravel,
@@ -18,6 +19,8 @@ import {
   SiMysql,
   SiPostgresql,
   SiFirebase,
+  SiSupabase,
+  SiVercel,
   SiPandas,
   SiNumpy,
   SiScikitlearn,
@@ -63,31 +66,37 @@ export default function Hero() {
 
   const technologies = [
     // Frontend (fila 1 - 7 iconos)
-    { name: 'React', icon: FaReact, color: 'text-white' },
-    { name: 'JavaScript', icon: FaJs, color: 'text-white' },
-    { name: 'Java', icon: FaJava, color: 'text-white' },
-    { name: 'HTML5', icon: FaHtml5, color: 'text-white' },
-    { name: 'CSS3', icon: FaCss3Alt, color: 'text-white' },
-    { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-white' },
-    { name: 'Vite', icon: SiVite, color: 'text-white' },
-    // Backend + BD + Herramientas (fila 2 - 9 iconos)
-    { name: 'PHP', icon: SiPhp, color: 'text-white', size: 'text-4xl md:text-5xl lg:text-6xl' },
-    { name: 'Laravel', icon: SiLaravel, color: 'text-white' },
-    { name: 'Node.js', icon: FaNodeJs, color: 'text-white' },
-    { name: 'Firebase', icon: SiFirebase, color: 'text-white' },
-    { name: 'MySQL', icon: SiMysql, color: 'text-white', size: 'text-4xl md:text-5xl lg:text-6xl' },
-    { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-white' },
-    { name: 'Git', icon: FaGitAlt, color: 'text-white' },
-    { name: 'GitHub', icon: FaGithub, color: 'text-white' },
-    { name: 'Docker', icon: SiDocker, color: 'text-white' },
-    // IA y Big Data (fila 3 - 7 iconos)
-    { name: 'Python', icon: FaPython, color: 'text-white' },
-    { name: 'Pandas', icon: SiPandas, color: 'text-white' },
-    { name: 'NumPy', icon: SiNumpy, color: 'text-white' },
-    { name: 'Scikit-learn', icon: SiScikitlearn, color: 'text-white' },
-    { name: 'TensorFlow', icon: SiTensorflow, color: 'text-white' },
-    { name: 'Jupyter', icon: SiJupyter, color: 'text-white' },
-    { name: 'Google Colab', icon: SiGooglecolab, color: 'text-white' },
+    { name: 'React', icon: FaReact },
+    { name: 'JavaScript', icon: FaJs },
+    { name: 'HTML5', icon: FaHtml5 },
+    { name: 'CSS3', icon: FaCss3Alt },
+    { name: 'Tailwind CSS', icon: SiTailwindcss },
+    { name: 'TypeScript', icon: SiTypescript },
+    { name: 'Vite', icon: SiVite },
+    // Backend + BD (fila 2 - 8 iconos)
+    { name: 'PHP', icon: SiPhp },
+    { name: 'Laravel', icon: SiLaravel },
+    { name: 'Node.js', icon: FaNodeJs },
+    { name: 'Firebase', icon: SiFirebase },
+    { name: 'MySQL', icon: SiMysql },
+    { name: 'PostgreSQL', icon: SiPostgresql },
+    { name: 'Supabase', icon: SiSupabase },
+    // Herramientas (fila 3 - 7 iconos)
+    { name: 'Git', icon: FaGitAlt },
+    { name: 'GitHub', icon: FaGithub },
+    { name: 'Docker', icon: SiDocker },
+    { name: 'AWS', icon: FaAws },
+    { name: 'Vercel', icon: SiVercel },
+    { name: 'Railway', icon: null, bigText: true },
+    { name: 'Google Colab', icon: SiGooglecolab },
+    // IA y Big Data (fila 4 - 7 iconos)
+    { name: 'Python', icon: FaPython },
+    { name: 'Pandas', icon: SiPandas },
+    { name: 'NumPy', icon: SiNumpy },
+    { name: 'Matplotlib', icon: null, bigText: true },
+    { name: 'Scikit-learn', icon: SiScikitlearn },
+    { name: 'TensorFlow', icon: SiTensorflow },
+    { name: 'Jupyter', icon: SiJupyter },
   ];
   return (    <section
         className="relative text-white min-h-[400px] md:min-h-[550px] lg:min-h-[550px] flex items-start pt-16 pb-16 overflow-hidden"
@@ -222,55 +231,61 @@ export default function Hero() {
         </div>        {/* Sección de TechStack integrada - debajo de las dos columnas */}
         <div className="mt-12 lg:mt-16 mb-14" id="tecnologias">
           <div className="space-y-6 px-6 sm:px-10 md:px-12 lg:px-14">
-            {/* Primera fila - Frontend (7 iconos) */}
-            <div className="grid grid-cols-7 sm:grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+            {/* Fila 1 - Frontend (7 iconos) */}
+            <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
               {technologies.slice(0, 7).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
-                  <div
-                    key={index}
-                    className="group flex items-center justify-center w-full"
-                    title={tech.name}
-                  >
-                    <IconComponent
-                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`}
-                    />
+                  <div key={index} className="group flex items-center justify-center w-full" title={tech.name}>
+                    {IconComponent
+                      ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
+                      : <span className={`${tech.bigText ? 'text-xs sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
+                    }
                   </div>
                 );
               })}
             </div>
 
-            {/* Segunda fila - Backend + BD + Herramientas (9 iconos) */}
-            <div className="grid grid-cols-9 sm:grid-cols-9 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
-              {technologies.slice(7, 16).map((tech, index) => {
+            {/* Fila 2 - Backend + BD (7 iconos) */}
+            <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+              {technologies.slice(7, 14).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
-                  <div
-                    key={index + 7}
-                    className="group flex items-center justify-center w-full"
-                    title={tech.name}
-                  >
-                    <IconComponent
-                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`}
-                    />
+                  <div key={index + 7} className="group flex items-center justify-center w-full" title={tech.name}>
+                    {IconComponent
+                      ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
+                      : <span className={`${tech.bigText ? 'text-xs sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
+                    }
                   </div>
                 );
               })}
             </div>
 
-            {/* Tercera fila - IA y Big Data (7 iconos) */}
-            <div className="grid grid-cols-7 sm:grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
-              {technologies.slice(16, 23).map((tech, index) => {
+            {/* Fila 3 - Herramientas (7 iconos) */}
+            <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+              {technologies.slice(14, 21).map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
-                  <div
-                    key={index + 16}
-                    className="group flex items-center justify-center w-full"
-                    title={tech.name}
-                  >
-                    <IconComponent
-                      className={`${tech.size || 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'} ${tech.color} hover:text-lime-400 group-hover:scale-110 transition-all duration-300`}
-                    />
+                  <div key={index + 15} className="group flex items-center justify-center w-full" title={tech.name}>
+                    {IconComponent
+                      ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
+                      : <span className={`${tech.bigText ? 'text-xs sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
+                    }
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Fila 4 - IA y Big Data (7 iconos) */}
+            <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+              {technologies.slice(21, 28).map((tech, index) => {
+                const IconComponent = tech.icon;
+                return (
+                  <div key={index + 21} className="group flex items-center justify-center w-full" title={tech.name}>
+                    {IconComponent
+                      ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
+                      : <span className={`${tech.bigText ? 'text-xs sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
+                    }
                   </div>
                 );
               })}

@@ -3,33 +3,33 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Pets - Cuidado de Mascotas",
-      description: "Proyecto final de grado para el alojamiento de mascotas con sistema de reservas y perfiles de usuarios, cuidadores y empresas. Sistemas de búsqueda, notificaciones y chat en tiempo real.",
-      technologies: ["React", "Laravel", "Docker", "PostgreSQL", "Tailwind CSS", "Vite", "JavaScript", "Node.js", "AWS"],
-      image: `${import.meta.env.BASE_URL}Pets.webp`,
-      githubUrl: "https://github.com/BorjaEscolanoMartin/pet-hosting-platform",
-      demoUrl: "http://51.20.38.155:5173/",
+      title: "DataInsight AI",
+      description: "Plataforma web que transforma archivos CSV en análisis completos sin escribir código. Ofrece perfilado estadístico, dashboard interactivo con visualizaciones automáticas, insights en lenguaje natural generados por Claude (Anthropic) y predicciones con Prophet o scikit-learn para series temporales.",
+      technologies: ["Python", "Node.js", "FastAPI", "React", "Supabase", "Claude API", "Prophet", "scikit-learn", "pandas"],
+      image: `${import.meta.env.BASE_URL}DataInsightAI.webp`,
+      githubUrl: "https://github.com/BorjaEscolanoMartin/DataInsightAI",
+      demoUrl: "https://data-insight-ai-qbh4.vercel.app/",
       status: "Completado"
     },
     {
       id: 2,
+      title: "Pets - Plataforma de alojamiento de mascotas",
+      description: "Proyecto final de grado, full stack con autenticación, roles de usuario, perfiles, reservas, chat en tiempo real, notificaciones, filtros avanzados, mapas y subida de imágenes.",
+      technologies: ["Laravel", "React", "Tailwind CSS", "Docker", "Nginx", "AWS"],
+      image: `${import.meta.env.BASE_URL}Pets.webp`,
+      githubUrl: "https://github.com/BorjaEscolanoMartin/PlataformaPets",
+      demoUrl: "http://13.36.139.63/",
+      status: "Completado"
+    },
+    {
+      id: 3,
       title: "Portfolio Personal",
       description: "Sitio web personal moderno y responsive diseñado para mostrar proyectos, habilidades y experiencia profesional. Optimizado para rendimiento y SEO.",
       technologies: ["React", "Vite", "Tailwind CSS", "JavaScript"],
       image: `${import.meta.env.BASE_URL}Portfolio.webp`,
       githubUrl: "https://github.com/BorjaEscolanoMartin/PortFolio",
       demoUrl: "https://borjaescolanomartin.github.io/PortFolio/",
-      status: "En desarrollo"
-    },
-    {
-      id: 3,
-      title: "E-commerce Dashboard",
-      description: "Panel de administración para comercio electrónico con análisis de ventas, gestión de inventario y control de usuarios. Interfaz intuitiva con gráficos interactivos.",
-      technologies: ["Vue.js", "Node.js", "Express", "MongoDB"],
-      image: `${import.meta.env.BASE_URL}fondo.webp`,
-      githubUrl: "#",
-      demoUrl: "#",
-      status: "Próximamente"
+      status: "Completado"
     }
   ];
 
