@@ -142,15 +142,15 @@ export default function Hero() {
         
         {/* Flecha hacia abajo personalizada */}
         <div className="flex flex-col items-center">
-          <img 
-            src={`${import.meta.env.BASE_URL}flecha.png`} 
+          <img
+            src={`${import.meta.env.BASE_URL}flecha.png`}
             alt="Scroll down arrow"
-            className="w-5 h-60 object-cover"
+            className="w-5 h-72 object-cover"
           />
         </div>
-        
+
         {/* Espaciador antes de iconos sociales */}
-        <div className="flex-grow"></div>
+        <div className="mt-12"></div>
         
         <div className="flex flex-col gap-4 text-2xl">
           <a href="https://github.com/BorjaEscolanoMartin/" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-white hover:text-lime-400 transition-colors duration-300">
@@ -159,14 +159,13 @@ export default function Hero() {
           <a href="https://www.linkedin.com/in/borja-escolano-martin/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-white hover:text-lime-400 transition-colors duration-300">
             <FaLinkedin />
           </a>
-          <button
-            onClick={handleEmailClick}
-            aria-label="Enviar email" 
-            title="Enviar email a escolanomartinborja@gmail.com"
-            className="text-white hover:text-lime-400 transition-colors duration-300 bg-transparent border-none cursor-pointer p-0 text-2xl"
+          <a
+            href="#contacto"
+            aria-label="Ir a contacto"
+            className="text-white hover:text-lime-400 transition-colors duration-300"
           >
             <FaEnvelope />
-          </button>
+          </a>
         </div>
       </div>        {/* Contenido principal - Layout con dos columnas */}      
       <div className="w-full max-w-7xl mx-auto px-6 z-10 relative lg:px-20 lg:ml-8 gap-2">
@@ -239,7 +238,7 @@ export default function Hero() {
                   <div key={index} className="group flex items-center justify-center w-full" title={tech.name}>
                     {IconComponent
                       ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
-                      : <span className={`${tech.bigText ? 'text-xs sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
+                      : <span className={`${tech.bigText ? 'text-[9px] sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
                     }
                   </div>
                 );
@@ -254,7 +253,7 @@ export default function Hero() {
                   <div key={index + 7} className="group flex items-center justify-center w-full" title={tech.name}>
                     {IconComponent
                       ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
-                      : <span className={`${tech.bigText ? 'text-xs sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
+                      : <span className={`${tech.bigText ? 'text-[9px] sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
                     }
                   </div>
                 );
@@ -269,7 +268,7 @@ export default function Hero() {
                   <div key={index + 15} className="group flex items-center justify-center w-full" title={tech.name}>
                     {IconComponent
                       ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
-                      : <span className={`${tech.bigText ? 'text-xs sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
+                      : <span className={`${tech.bigText ? 'text-[9px] sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
                     }
                   </div>
                 );
@@ -284,7 +283,7 @@ export default function Hero() {
                   <div key={index + 21} className="group flex items-center justify-center w-full" title={tech.name}>
                     {IconComponent
                       ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
-                      : <span className={`${tech.bigText ? 'text-xs sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
+                      : <span className={`${tech.bigText ? 'text-[9px] sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
                     }
                   </div>
                 );
