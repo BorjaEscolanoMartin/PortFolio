@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaMobileAlt, FaArrowDown, FaDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 import {
   FaReact,
   FaJs,
@@ -28,41 +28,7 @@ import {
   SiJupyter,
   SiGooglecolab
 } from 'react-icons/si';
-import { useState } from 'react';
-
 export default function Hero() {
-  const [showEmailModal, setShowEmailModal] = useState(false);
-
-  const handleEmailClick = (e) => {
-    e.preventDefault();
-    
-    // Intentar mailto primero
-    const mailtoLink = "mailto:escolanomartinborja@gmail.com?subject=Consulta%20desde%20el%20portfolio&body=Hola%20Borja%2C%20te%20escribo%20porque...";
-    
-    // Crear enlace temporal
-    const tempLink = document.createElement('a');
-    tempLink.href = mailtoLink;
-    document.body.appendChild(tempLink);
-    tempLink.click();
-    document.body.removeChild(tempLink);
-    
-    // Si no funciona después de 2 segundos, mostrar modal
-    setTimeout(() => {
-      setShowEmailModal(true);
-    }, 2000);
-  };
-
-  const openGmail = () => {
-    window.open(
-      "https://mail.google.com/mail/?view=cm&fs=1&to=escolanomartinborja@gmail.com&su=Consulta%20desde%20el%20portfolio&body=Hola%20Borja%2C%20te%20escribo%20porque...",
-      '_blank'
-    );
-    setShowEmailModal(false);
-  };
-
-  const closeModal = () => {
-    setShowEmailModal(false);
-  };
 
   const technologies = [
     // Frontend (fila 1 - 7 iconos)
@@ -102,34 +68,31 @@ export default function Hero() {
         className="relative text-white min-h-[400px] md:min-h-[550px] lg:min-h-[550px] flex items-start pt-16 pb-16 overflow-hidden"
         id="inicio"
     >    {/* Lateral izquierdo */}
-      <div className="absolute left-6 top-16 hidden lg:flex flex-col justify-between items-center w-8" style={{height: 'calc(100% - 32px - 350px)'}}>{/* Icono de móvil */}
-        <div className="flex flex-col items-center">
-          <img 
-            src={`${import.meta.env.BASE_URL}iconotelefono.svg`} 
+      <div className="absolute left-6 top-17 hidden lg:flex flex-col justify-between items-center w-8" style={{height: 'calc(100% - 80px - 358px)'}}>
+        {/* Icono de móvil */}
+        <div>
+          <img
+            src={`${import.meta.env.BASE_URL}iconotelefono.svg`}
             alt="Phone icon"
             className="w-6 h-6"
           />
-        </div>          
+        </div>
         {/* Teléfono rotado */}
-        <div className="flex flex-col items-center">
-          <a href="tel:+34628406752" className="rotate-90 text-xs font-bold hover:text-lime-400 transition whitespace-nowrap origin-center text-white tracking-widest">
+        <div>
+          <a href="tel:+34628406752" className="block rotate-90 text-xs font-bold hover:text-lime-400 transition whitespace-nowrap origin-center text-white tracking-widest mb-10">
             +34 628 406 752
           </a>
         </div>
-        
-        {/* Espaciador adicional */}
-        <div></div>        
-        {/* Texto rotado SCROLL DOWN */}
-        <div className="flex flex-col items-center">
-          <span className="rotate-90 tracking-widest text-xs whitespace-nowrap origin-center text-gray-400">DESLIZA ABAJO</span>
+        {/* Texto DESLIZA ABAJO rotado */}
+        <div>
+          <span className="block rotate-90 tracking-widest text-xs whitespace-nowrap origin-center text-gray-400">DESLIZA ABAJO</span>
         </div>
-
-        {/* Flecha hacia abajo personalizada */}
-        <div className="flex flex-col items-center ml-1">
-          <img 
-            src={`${import.meta.env.BASE_URL}flecha.png`} 
+        {/* Flecha */}
+        <div>
+          <img
+            src={`${import.meta.env.BASE_URL}flecha.png`}
             alt="Scroll down arrow"
-            className="w-20 h-30 object-cover"
+            className="w-20 h-30 object-cover translate-x-0.5"
           />
         </div>
       </div>      {/* Lateral derecho */}      
@@ -293,42 +256,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Modal personalizado para email */}
-      {showEmailModal && (
-        <div 
-          className="fixed inset-0 flex items-center justify-center z-50 px-4"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
-        >
-          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-2xl">
-            <div className="text-center">
-              <div className="mb-4">
-                <FaEnvelope className="text-4xl text-lime-400 mx-auto mb-3" />
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  ¿No se abrió tu cliente de correo?
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Puedes contactarme en: <strong>escolanomartinborja@gmail.com</strong>
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={openGmail}
-                  className="flex-1 bg-lime-400 hover:bg-lime-500 text-black font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
-                >
-                  Abrir Gmail
-                </button>
-                <button
-                  onClick={closeModal}
-                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
-                >
-                  Cerrar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
