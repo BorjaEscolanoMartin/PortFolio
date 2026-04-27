@@ -143,7 +143,7 @@ export default function Hero() {
               Desarrollador Web Full-Stack
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Desarrollo aplicaciones web modernas con un stack orientado a frontend, backend, APIs, bases de datos y despliegue. He trabajado en proyectos con autenticación, reservas, chat en tiempo real, notificaciones y actualmente curso una Especialización en IA y Big Data.
+              Desarrollador Web Full Stack con experiencia en desarrollo de aplicaciones modernas. Especializado en APIs, lógica de negocio, bases de datos y despliegue. Experiencia en autenticación, reservas, chat en tiempo real y notificaciones. Actualmente en especialización en Inteligencia Artificial y Big Data.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a
