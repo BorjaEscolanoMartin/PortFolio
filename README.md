@@ -27,16 +27,6 @@ Sitio web personal desarrollado con React 19 y Vite, desplegado en GitHub Pages.
 
 ---
 
-## Proyectos destacados
-
-| Proyecto | Stack | Demo |
-|----------|-------|------|
-| **DataInsight AI** — análisis de CSV con IA | Python, FastAPI, React, Claude API, Supabase | [Ver demo](https://data-insight-ai-qbh4.vercel.app/) |
-| **Pets** — plataforma de alojamiento de mascotas | Laravel, React, Docker, Nginx, AWS | [Ver demo](http://13.36.139.63/) |
-| **Portfolio** — este sitio | React, Vite, Tailwind CSS | [Ver demo](https://borjaescolanomartin.github.io/PortFolio/) |
-
----
-
 ## Instalación y uso local
 
 ```bash
