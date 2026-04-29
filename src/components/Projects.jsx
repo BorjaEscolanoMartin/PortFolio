@@ -13,11 +13,11 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: "Plataforma Domótica con LLM",
-      description: "Integración de un LLM local (Ollama) con OpenHAB para el control domótico por lenguaje natural. Aplicado a un centro educativo ficticio, implementa function calling para ejecutar acciones sobre dispositivos y escucha reactiva de eventos vía SSE.",
-      technologies: ["Python", "Ollama", "OpenHAB", "Docker", "SSE", "Function Calling"],
-      image: `${import.meta.env.BASE_URL}PlataformaDomotica.webp`,
-      githubUrl: "https://github.com/BorjaEscolanoMartin/PlataformaDomotica",
+      title: "Email Automation Matrícula",
+      description: "Pipeline automatizado de procesamiento de matrículas: lectura de correo vía IMAP, extracción de datos desde PDFs con OCR y parsing de QR, generación de respuesta automática por SMTP. Infraestructura de correo completa montada en local con Docker.",
+      technologies: ["Robot Framework", "RPA Framework", "Docker", "SMTP/IMAP", "pytesseract", "pyzbar", "openpyxl", "pandas"],
+      image: `${import.meta.env.BASE_URL}EmailAutomationMatricula.webp`,
+      githubUrl: "https://github.com/BorjaEscolanoMartin/EmailAutomationMatricula",
       demoUrl: null,
       status: "Completado"
     },
@@ -33,22 +33,22 @@ export default function Projects() {
     },
     {
       id: 4,
+      title: "Plataforma Domótica con LLM",
+      description: "Integración de un LLM local (Ollama) con OpenHAB para el control domótico por lenguaje natural. Aplicado a un centro educativo ficticio, implementa function calling para ejecutar acciones sobre dispositivos y escucha reactiva de eventos vía SSE.",
+      technologies: ["Python", "Ollama", "OpenHAB", "Docker", "SSE", "Function Calling"],
+      image: `${import.meta.env.BASE_URL}PlataformaDomotica.webp`,
+      githubUrl: "https://github.com/BorjaEscolanoMartin/PlataformaDomotica",
+      demoUrl: null,
+      status: "Completado"
+    },
+    {
+      id: 5,
       title: "Iris ML Prediction",
       description: "Clasificador de la especie Iris con red neuronal Keras. Doble frontend con Gradio y Streamlit sobre un núcleo de predicción compartido. Modelo completamente reproducible vía train.py.",
       technologies: ["Python", "TensorFlow", "Keras", "scikit-learn", "Gradio", "Streamlit"],
       image: `${import.meta.env.BASE_URL}IrisMlPrediction.webp`,
       githubUrl: "https://github.com/BorjaEscolanoMartin/iris-ml-prediction",
       demoUrl: "https://huggingface.co/spaces/BemDev/Proyecto_Iris-BEM",
-      status: "Completado"
-    },
-    {
-      id: 5,
-      title: "Email Automation Matrícula",
-      description: "Pipeline automatizado de procesamiento de matrículas: lectura de correo vía IMAP, extracción de datos desde PDFs con OCR y parsing de QR, generación de respuesta automática por SMTP. Infraestructura de correo completa montada en local con Docker.",
-      technologies: ["Robot Framework", "RPA Framework", "Docker", "SMTP/IMAP", "pytesseract", "pyzbar", "openpyxl", "pandas"],
-      image: `${import.meta.env.BASE_URL}EmailAutomationMatricula.webp`,
-      githubUrl: "https://github.com/BorjaEscolanoMartin/EmailAutomationMatricula",
-      demoUrl: null,
       status: "Completado"
     },
     {
