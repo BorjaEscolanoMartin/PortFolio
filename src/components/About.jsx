@@ -24,7 +24,7 @@ export default function About() {
               </p>
 
               <p>
-                Actualmente continúo mi formación con una <span className="text-white font-semibold">Especialización de FP en Inteligencia Artificial y Big Data</span>, abarcando <span className="text-white">análisis de datos</span>, <span className="text-white">machine learning</span>, <span className="text-white">tratamiento de datos</span> y aplicación de <span className="text-lime-400">soluciones de IA en entornos reales</span>.
+                Actualmente continúo mi formación con una <span className="text-white font-semibold">Especialización de FP en Inteligencia Artificial y Big Data</span>, abarcando <span className="text-lime-400">análisis de datos</span>, <span className="text-lime-400">machine learning</span>, <span className="text-lime-400">tratamiento de datos</span> y aplicación de <span className="text-lime-400">soluciones de IA en entornos reales</span>.
               </p>
             </div>
           </div>
