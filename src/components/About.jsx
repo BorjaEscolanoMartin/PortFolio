@@ -20,11 +20,11 @@ export default function About() {
               </p>
 
               <p>
-                Trabajo con un stack orientado a la <span className="text-lime-400">lógica de negocio</span>, <span className="text-lime-400">bases de datos</span>, <span className="text-lime-400">interfaces responsive</span>, <span className="text-lime-400">APIs</span> y despliegue de proyectos web, y he desarrollado soluciones propias con <span className="text-lime-400">autenticación, reservas, chat en tiempo real y notificaciones</span>.
+                Trabajo con un stack orientado a la <span className="text-lime-400">lógica de negocio</span>, <span className="text-lime-400">bases de datos</span>, <span className="text-lime-400">interfaces responsive</span>, <span className="text-lime-400">APIs</span> y despliegue de proyectos web, aplicando <span className="text-lime-400">Clean Architecture</span> y <span className="text-lime-400">testing</span> para construir soluciones desacopladas, mantenibles y preparadas para escalar.
               </p>
 
               <p>
-                Actualmente continúo mi formación con una <span className="text-white font-semibold">Especialización de FP en Inteligencia Artificial y Big Data</span>, abarcando <span className="text-lime-400">análisis de datos</span>, <span className="text-lime-400">machine learning</span>, <span className="text-lime-400">tratamiento de datos</span> y aplicación de <span className="text-lime-400">soluciones de IA en entornos reales</span>.
+                He completado la <span className="text-white font-semibold">Especialización de FP en Inteligencia Artificial y Big Data</span>, abarcando <span className="text-lime-400">análisis de datos</span>, <span className="text-lime-400">machine learning</span>, <span className="text-lime-400">tratamiento de datos</span> y aplicación de <span className="text-lime-400">soluciones de IA en entornos reales</span>.
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function About() {
                     Especialización de FP en Inteligencia Artificial y Big Data
                   </p>
                   <p className="text-gray-400 text-sm">
-                    En curso
+                    Título oficial · 2026
                   </p>
                 </li>
                 <li>
@@ -86,7 +86,7 @@ export default function About() {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  Auth, chat en tiempo real y notificaciones
+                  Clean Architecture, testing y código escalable
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>

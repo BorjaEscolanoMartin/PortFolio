@@ -141,9 +141,12 @@ export default function Hero() {
               Disponible para trabajar
             </p>            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-normal">
               Desarrollador Web Full-Stack
+              <span className="block text-lime-400 text-3xl md:text-4xl mt-3">
+                Especialista en IA y Big Data
+              </span>
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Desarrollador Web Full Stack con experiencia en desarrollo de aplicaciones modernas. Especializado en APIs, lógica de negocio, bases de datos y despliegue. Experiencia en autenticación, reservas, chat en tiempo real y notificaciones. Actualmente en especialización en Inteligencia Artificial y Big Data.
+              Diseño y desarrollo aplicaciones web aplicando principios de Clean Architecture: código desacoplado, testable y preparado para escalar. Del frontend al despliegue, con machine learning y análisis de datos como especialización.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a
