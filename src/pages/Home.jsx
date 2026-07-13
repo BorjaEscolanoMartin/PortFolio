@@ -1,6 +1,7 @@
 // src/pages/Home.jsx
 import Hero from "../components/Hero";
 import About from "../components/About";
+import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 
@@ -69,7 +70,13 @@ export default function Home() {
           
         <section id="sobre-mi" className="scroll-mt-16">
           <About />
-        </section>        <section id="proyectos" className="-scroll-mt-4">
+        </section>
+
+        <section id="experiencia" className="scroll-mt-16">
+          <Experience />
+        </section>
+
+        <section id="proyectos" className="-scroll-mt-4">
           <Projects />
         </section>
         

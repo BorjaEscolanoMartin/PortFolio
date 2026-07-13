@@ -25,6 +25,7 @@ export default function Header() {
         <nav className="hidden md:flex gap-12 font-bold text-sm tracking-wide">
           <a href="#inicio" className="hover:text-lime-400 transition">INICIO</a>
           <a href="#sobre-mi" className="hover:text-lime-400 transition">SOBRE MÍ</a>
+          <a href="#experiencia" className="hover:text-lime-400 transition">EXPERIENCIA</a>
           <a href="#proyectos" className="hover:text-lime-400 transition">PROYECTOS</a>
           <a href="#contacto" className="hover:text-lime-400 transition">CONTACTO</a>
         </nav>
@@ -67,8 +68,15 @@ export default function Header() {
             >
               SOBRE MÍ
             </a>
-            <a 
-              href="#proyectos" 
+            <a
+              href="#experiencia"
+              className="font-bold text-sm tracking-wide hover:text-lime-400 transition py-2"
+              onClick={closeMenu}
+            >
+              EXPERIENCIA
+            </a>
+            <a
+              href="#proyectos"
               className="font-bold text-sm tracking-wide hover:text-lime-400 transition py-2"
               onClick={closeMenu}
             >
