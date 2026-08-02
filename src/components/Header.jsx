@@ -15,14 +15,14 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl z-50 bg-black text-white shadow-sm">
-      <div className="px-6 py-4 flex justify-between items-center">
+      <div className="px-6 py-4 flex justify-between items-center gap-6">
         {/* Logo o nombre */}
-        <a href="#inicio" className="flex items-center gap-3 hover:opacity-80 transition-opacity" onClick={closeMenu}>
+        <a href="#inicio" className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity" onClick={closeMenu}>
           <img src={`${import.meta.env.BASE_URL}IconoB.webp`} alt="Logo BEM_DEV" width="32" height="32" className="w-8 h-8" />
           <div className="text-xl font-bold tracking-wide">BEM_DEV</div>
         </a>        
         {/* Navegación desktop */}
-        <nav className="hidden md:flex gap-12 font-bold text-sm tracking-wide">
+        <nav className="hidden lg:flex items-center gap-8 xl:gap-12 font-bold text-sm tracking-wide whitespace-nowrap">
           <a href="#inicio" className="hover:text-lime-400 transition">INICIO</a>
           <a href="#sobre-mi" className="hover:text-lime-400 transition">SOBRE MÍ</a>
           <a href="#experiencia" className="hover:text-lime-400 transition">EXPERIENCIA</a>
@@ -31,10 +31,10 @@ export default function Header() {
         </nav>
 
         {/* Botón Hablemos desktop */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block shrink-0">
           <a
             href="#contacto"
-            className="bg-lime-400 text-black px-4 py-2 rounded-full font-bold hover:bg-lime-300 transition"
+            className="bg-lime-400 text-black px-4 py-2 rounded-full font-bold whitespace-nowrap hover:bg-lime-300 transition"
           >
             HABLEMOS
           </a>
@@ -43,7 +43,7 @@ export default function Header() {
         {/* Botón hamburguesa móvil */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-white hover:text-lime-400 transition-colors duration-200"
+          className="lg:hidden shrink-0 text-white hover:text-lime-400 transition-colors duration-200"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -52,7 +52,7 @@ export default function Header() {
 
       {/* Menú móvil */}
       {isMenuOpen && (
-        <div className="md:hidden bg-black border-t border-gray-800">
+        <div className="lg:hidden bg-black border-t border-gray-800">
           <nav className="flex flex-col px-6 py-4 space-y-4">
             <a 
               href="#inicio" 
