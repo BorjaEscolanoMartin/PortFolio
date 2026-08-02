@@ -25,3 +25,6 @@ dist-ssr
 CLAUDE.md
 # AI tooling local
 .atl/
+
+# Windows/WSL NTFS alternate data streams
+*:Zone.Identifier
