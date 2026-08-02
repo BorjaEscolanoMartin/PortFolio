@@ -6,7 +6,7 @@ const experiences = [
     period: "2026",
     bullets: [
       "Plataforma de protección de imágenes frente a deepfakes, aplicando perturbaciones adversariales sobre modelos de IA generativa.",
-      "Dashboard en React/TypeScript con subida multi-archivo y procesado por lotes, integrado con una API en Python/FastAPI desarrollada por mí.",
+      "Dashboard en React/TypeScript con subida multi-archivo y procesado por lotes, integrado con una API en Python/FastAPI.",
       "Calidad de código en equipo: revisión de PRs, testing en CI con mocks de modelos ML (ONNX) y flujo colaborativo en GitHub.",
     ],
   },
