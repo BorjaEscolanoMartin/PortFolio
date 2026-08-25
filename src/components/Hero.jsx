@@ -68,7 +68,10 @@ export default function Hero() {
         className="relative text-white min-h-[400px] md:min-h-[550px] lg:min-h-[550px] flex items-start pt-16 pb-16 overflow-hidden"
         id="inicio"
     >    {/* Lateral izquierdo */}
-      <div className="absolute left-6 top-17 hidden lg:flex flex-col justify-between items-center w-8" style={{height: 'calc(100% - 80px - 358px)'}}>
+      {/* Altura fija (no calc del 100%) para que la flecha termine a la altura del icono
+          de correo del lateral derecho, que tambien es de altura fija por contenido.
+          Con calc(100%) la flecha se movia cada vez que crecia el texto del hero. */}
+      <div className="absolute left-6 top-17 hidden lg:flex flex-col justify-between items-center w-8" style={{height: '530px'}}>
         {/* Icono de móvil */}
         <div>
           <img
