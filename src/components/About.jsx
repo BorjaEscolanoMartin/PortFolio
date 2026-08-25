@@ -24,7 +24,7 @@ export default function About() {
               </p>
 
               <p>
-                He completado la <span className="text-white font-semibold">Especialización de FP en Inteligencia Artificial y Big Data</span>, abarcando <span className="text-lime-400">análisis de datos</span>, <span className="text-lime-400">machine learning</span>, <span className="text-lime-400">tratamiento de datos</span> y aplicación de <span className="text-lime-400">soluciones de IA en entornos reales</span>.
+                He completado el <span className="text-white font-semibold">Máster de FP en Inteligencia Artificial y Big Data</span>, abarcando <span className="text-lime-400">análisis de datos</span>, <span className="text-lime-400">machine learning</span>, <span className="text-lime-400">tratamiento de datos</span> y aplicación de <span className="text-lime-400">soluciones de IA en entornos reales</span>.
               </p>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function About() {
                 </li>
                 <li>
                   <p className="text-lime-400 font-semibold leading-snug">
-                    Especialización de FP en Inteligencia Artificial y Big Data
+                    Máster de FP en Inteligencia Artificial y Big Data
                   </p>
                   <p className="text-gray-400 text-sm">
                     Título oficial · 2026
