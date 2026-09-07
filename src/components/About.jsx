@@ -1,4 +1,6 @@
 // src/components/About.jsx
+import { education, languages } from '../data/education';
+
 export default function About() {
   return (
     <section className="text-white pt-24 pb-16 px-6">
@@ -16,7 +18,7 @@ export default function About() {
             
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                <span className="text-white font-semibold">Desarrollador Web Full Stack</span> con experiencia práctica en el desarrollo de aplicaciones web modernas, participando tanto en <span className="text-lime-400">frontend</span> como en <span className="text-lime-400">backend</span>.
+                <span className="text-white font-semibold">Desarrollador Web Full-Stack</span> con experiencia práctica en el desarrollo de aplicaciones web modernas, participando tanto en <span className="text-lime-400">frontend</span> como en <span className="text-lime-400">backend</span>.
               </p>
 
               <p>
@@ -43,30 +45,21 @@ export default function About() {
                 </h4>
               </div>
               <ul className="space-y-3">
-                <li>
-                  <p className="text-lime-400 font-semibold leading-snug">
-                    Técnico Superior en Desarrollo de Aplicaciones Web
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    Título oficial · 2025
-                  </p>
-                </li>
-                <li>
-                  <p className="text-lime-400 font-semibold leading-snug">
-                    Máster de FP en Inteligencia Artificial y Big Data
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    Título oficial · 2026
-                  </p>
-                </li>
-                <li>
-                  <p className="text-lime-400 font-semibold leading-snug">
-                    Curso de Desarrollo con IA de 0 a producción
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    Completado este año
-                  </p>
-                </li>
+                {education.map((item) => (
+                  <li key={item.id}>
+                    <p className="text-lime-400 font-semibold leading-snug">
+                      {item.title}
+                    </p>
+                    {item.institution && (
+                      <p className="text-gray-400 text-sm">
+                        {item.institution}
+                      </p>
+                    )}
+                    <p className="text-gray-500 text-sm">
+                      {item.years} · {item.detail}
+                    </p>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -78,7 +71,7 @@ export default function About() {
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  Desarrollo Full Stack (Frontend + Backend)
+                  Desarrollo Full-Stack (Frontend + Backend)
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
@@ -92,6 +85,24 @@ export default function About() {
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
                   Análisis de datos, Machine Learning e IA aplicada
                 </li>
+              </ul>
+            </div>
+
+            {/* Tarjeta de idiomas */}
+            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-lime-400/30 transition-all duration-300">
+              <h4 className="text-xl font-bold text-white mb-3">
+                Idiomas
+              </h4>
+              <ul className="space-y-2 text-gray-300">
+                {languages.map((lang) => (
+                  <li key={lang.id} className="flex items-center justify-between">
+                    <span className="flex items-center">
+                      <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
+                      {lang.name}
+                    </span>
+                    <span className="text-gray-400 text-sm">{lang.level}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
