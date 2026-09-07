@@ -10,7 +10,6 @@ import {
   SiMysql,
   SiPostgresql,
   SiSupabase,
-  SiFirebase,
   SiPandas,
   SiNumpy,
   SiTableau,
@@ -53,7 +52,7 @@ export const skillGroups = [
     id: 'backend-bd',
     title: 'Backend y bases de datos',
     summary:
-      'APIs REST y lógica de negocio con Node.js, PHP y Laravel, con persistencia en MySQL, PostgreSQL, Supabase y Firebase.',
+      'APIs REST y lógica de negocio con Node.js, PHP y Laravel, con persistencia en MySQL, PostgreSQL y Supabase.',
     items: [
       { name: 'Node.js', icon: FaNodeJs },
       { name: 'PHP', icon: SiPhp },
@@ -64,7 +63,6 @@ export const skillGroups = [
       { name: 'PostgreSQL', icon: SiPostgresql },
       { name: 'SQL', icon: null },
       { name: 'Supabase', icon: SiSupabase },
-      { name: 'Firebase', icon: SiFirebase },
     ],
   },
   {
