@@ -92,13 +92,13 @@ export default function Hero() {
             <p className="uppercase text-sm tracking-widest text-gray-400 mb-4">
               Disponible para trabajar
             </p>            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-normal">
-              Desarrollador Web Full-Stack
+              Desarrollador Full-Stack
               <span className="block text-lime-400 text-3xl md:text-4xl mt-3">
-                Máster de FP en Inteligencia Artificial y Big Data
+                Analista de datos · Máster de FP en IA y Big Data
               </span>
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Diseño y desarrollo de aplicaciones web aplicando principios de Clean Architecture: código desacoplado, testable y preparado para escalar. Del frontend al despliegue, con machine learning y análisis de datos como especialización.
+              Diseño y desarrollo de aplicaciones web con Clean Architecture y testing: código desacoplado y preparado para escalar. Y del dato a la decisión: análisis con SQL, Python y Power BI, con machine learning aplicado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a
@@ -123,7 +123,7 @@ export default function Hero() {
           <div className="relative">
             <img
               src={`${import.meta.env.BASE_URL}Yop.webp`}
-              alt="Foto de Borja Escolano, desarrollador web full-stack"
+              alt="Foto de Borja Escolano, desarrollador full-stack y analista de datos"
               loading="eager"
               fetchPriority="high"
               className="max-w-full h-auto max-h-[450px] object-cover"

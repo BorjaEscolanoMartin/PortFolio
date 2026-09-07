@@ -18,15 +18,15 @@ export default function About() {
             
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                <span className="text-white font-semibold">Desarrollador Web Full-Stack</span> con experiencia práctica en el desarrollo de aplicaciones web modernas, participando tanto en <span className="text-lime-400">frontend</span> como en <span className="text-lime-400">backend</span>.
+                <span className="text-white font-semibold">Desarrollador Full-Stack</span> con experiencia práctica en el desarrollo de aplicaciones web modernas, participando tanto en <span className="text-lime-400">frontend</span> como en <span className="text-lime-400">backend</span>.
               </p>
 
               <p>
-                Trabajo con un stack orientado a la <span className="text-lime-400">lógica de negocio</span>, <span className="text-lime-400">bases de datos</span>, <span className="text-lime-400">interfaces responsive</span>, <span className="text-lime-400">APIs</span> y despliegue de proyectos web, aplicando <span className="text-lime-400">Clean Architecture</span> y <span className="text-lime-400">testing</span> para construir soluciones desacopladas, mantenibles y preparadas para escalar.
+                Trabajo la <span className="text-lime-400">lógica de negocio</span>, las <span className="text-lime-400">bases de datos</span> y las <span className="text-lime-400">APIs</span> igual que las <span className="text-lime-400">interfaces responsive</span> y el despliegue, aplicando <span className="text-lime-400">Clean Architecture</span> y <span className="text-lime-400">testing</span> para que el código sea desacoplado, mantenible y escalable.
               </p>
 
               <p>
-                He completado el <span className="text-white font-semibold">Máster de FP en Inteligencia Artificial y Big Data</span>, abarcando <span className="text-lime-400">análisis de datos</span>, <span className="text-lime-400">machine learning</span>, <span className="text-lime-400">tratamiento de datos</span> y aplicación de <span className="text-lime-400">soluciones de IA en entornos reales</span>.
+                He completado el <span className="text-white font-semibold">Máster de FP en Inteligencia Artificial y Big Data</span>: análisis y visualización de datos con <span className="text-lime-400">SQL</span>, <span className="text-lime-400">Python</span> y <span className="text-lime-400">Power BI</span>, <span className="text-lime-400">machine learning</span> con scikit-learn y TensorFlow, y aplicaciones con <span className="text-lime-400">LLMs (RAG)</span> y <span className="text-lime-400">visión por computador</span>.
               </p>
             </div>
           </div>
@@ -83,7 +83,11 @@ export default function About() {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  Análisis de datos, Machine Learning e IA aplicada
+                  Análisis de datos y BI: SQL, Python, Power BI
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
+                  Machine Learning e IA aplicada: LLMs, visión por computador
                 </li>
               </ul>
             </div>
