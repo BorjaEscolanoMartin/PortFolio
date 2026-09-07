@@ -1,0 +1,113 @@
+// src/data/projects.js
+export const projects = [
+  {
+    id: 1,
+    title: 'TuyTu Tech',
+    description:
+      'Desarrollo íntegro de la web pública de TuyTu: arquitectura React 19 + TypeScript sobre un único Worker de Cloudflare que sirve assets y API, datos en Supabase, validación con Zod, protección antibot con Turnstile y CSP estricta fijada por tests. Actualmente en equipo de Core, desarrollo y entrenamiento del algoritmo preventivo.',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Cloudflare Workers', 'Supabase', 'React Router', 'Zod', 'Vitest'],
+    image: `${import.meta.env.BASE_URL}Tuytu.webp`,
+    githubUrl: null,
+    demoUrl: 'https://tuytu.tech',
+    status: 'En desarrollo',
+    categories: ['web'],
+  },
+  {
+    id: 2,
+    title: 'DataInsight AI',
+    description:
+      'Plataforma web que transforma archivos CSV en análisis completos sin escribir código. Ofrece perfilado estadístico, dashboard interactivo con visualizaciones automáticas, insights en lenguaje natural generados por Claude (Anthropic) y predicciones con Prophet o scikit-learn para series temporales.',
+    technologies: ['Python', 'Node.js', 'FastAPI', 'React', 'Supabase', 'Claude API', 'Prophet', 'scikit-learn', 'pandas'],
+    image: `${import.meta.env.BASE_URL}DataInsightAI.webp`,
+    githubUrl: 'https://github.com/BorjaEscolanoMartin/DataInsightAI',
+    demoUrl: 'https://data-insight-ai-qbh4.vercel.app/',
+    status: 'Completado',
+    categories: ['web', 'datos-ia'],
+    note: 'La demo requiere registro',
+  },
+  {
+    id: 3,
+    title: 'Cuadro de mando de ventas en Power BI',
+    description:
+      'Cuadro de mando interactivo de ventas y rentabilidad construido en Power BI Desktop, con medidas DAX personalizadas y limpieza de datos con Power Query. Incluye visualizaciones por país, continente y periodo (mapa, gráficos y tarjetas KPI) publicadas en el servicio Power BI.',
+    technologies: ['Power BI', 'DAX', 'Power Query', 'Excel', 'Tableau'],
+    image: `${import.meta.env.BASE_URL}PowerBI.webp`,
+    githubUrl: null,
+    demoUrl: null,
+    status: 'Completado',
+    categories: ['datos-ia'],
+  },
+  {
+    id: 4,
+    title: 'Chatbot RAG con LangChain',
+    description:
+      'Chatbot conversacional con memoria que responde preguntas sobre documentos PDF mediante RAG (Retrieval Augmented Generation), con recuperación en Chroma y búsqueda MMR. Permite alternar entre la API de Gemini y un modelo Ollama local, con interfaz Streamlit desplegada en Hugging Face Spaces vía Docker.',
+    technologies: ['Python', 'LangChain', 'Streamlit', 'Chroma', 'Gemini API', 'Ollama', 'Docker'],
+    image: `${import.meta.env.BASE_URL}RagChatbot.webp`,
+    githubUrl: null,
+    demoUrl: null,
+    status: 'Completado',
+    categories: ['datos-ia'],
+  },
+  {
+    id: 5,
+    title: 'Detección de objetos con YOLO',
+    description:
+      'Serie de ejercicios de visión por computador con YOLO (Ultralytics): inferencia y detección en tiempo real sobre vídeo con OpenCV, una interfaz Streamlit para explorar distintas tareas del modelo, y el fine-tuning de un detector de fuego propio integrado en la misma interfaz.',
+    technologies: ['Python', 'YOLO (Ultralytics)', 'OpenCV', 'Streamlit', 'PyTorch'],
+    image: `${import.meta.env.BASE_URL}Yolo.webp`,
+    githubUrl: null,
+    demoUrl: null,
+    status: 'Completado',
+    categories: ['datos-ia'],
+  },
+  {
+    id: 6,
+    title: 'Email Automation Matrícula',
+    description:
+      'Pipeline automatizado de procesamiento de matrículas: lectura de correo vía IMAP, extracción de datos desde PDFs con OCR y parsing de QR, generación de respuesta automática por SMTP. Infraestructura de correo completa montada en local con Docker.',
+    technologies: ['Robot Framework', 'RPA Framework', 'Docker', 'SMTP/IMAP', 'pytesseract', 'pyzbar', 'openpyxl', 'pandas'],
+    image: `${import.meta.env.BASE_URL}EmailAutomationMatricula.webp`,
+    githubUrl: 'https://github.com/BorjaEscolanoMartin/EmailAutomationMatricula',
+    demoUrl: null,
+    status: 'Completado',
+    categories: ['datos-ia'],
+  },
+  {
+    id: 7,
+    title: 'Pets - Plataforma de alojamiento de mascotas',
+    description:
+      'Proyecto final de grado, full stack con autenticación, roles de usuario, perfiles, reservas, chat en tiempo real, notificaciones, filtros avanzados, mapas y subida de imágenes.',
+    technologies: ['Laravel', 'React', 'Tailwind CSS', 'Docker', 'Nginx', 'AWS'],
+    image: `${import.meta.env.BASE_URL}Pets.webp`,
+    githubUrl: 'https://github.com/BorjaEscolanoMartin/PlataformaPets',
+    demoUrl: null,
+    status: 'Completado',
+    categories: ['web'],
+  },
+  {
+    id: 8,
+    title: 'Plataforma Domótica con LLM',
+    description:
+      'Integración de un LLM local (Ollama) con OpenHAB para el control domótico por lenguaje natural. Aplicado a un centro educativo ficticio, implementa function calling para ejecutar acciones sobre dispositivos y escucha reactiva de eventos vía SSE.',
+    technologies: ['Python', 'Ollama', 'OpenHAB', 'Docker', 'SSE', 'Function Calling'],
+    image: `${import.meta.env.BASE_URL}PlataformaDomotica.webp`,
+    githubUrl: 'https://github.com/BorjaEscolanoMartin/PlataformaDomotica',
+    demoUrl: null,
+    status: 'Completado',
+    categories: ['datos-ia'],
+  },
+  {
+    id: 9,
+    title: 'Iris ML Prediction',
+    description:
+      'Clasificador de la especie Iris con red neuronal Keras. Doble frontend con Gradio y Streamlit sobre un núcleo de predicción compartido. Modelo completamente reproducible vía train.py.',
+    technologies: ['Python', 'TensorFlow', 'Keras', 'scikit-learn', 'Gradio', 'Streamlit'],
+    image: `${import.meta.env.BASE_URL}IrisMlPrediction.webp`,
+    githubUrl: 'https://github.com/BorjaEscolanoMartin/iris-ml-prediction',
+    demoUrl: 'https://huggingface.co/spaces/BemDev/Proyecto_Iris-BEM',
+    status: 'Completado',
+    categories: ['datos-ia'],
+    note: 'Demo en Hugging Face: puede tardar ~30 s en arrancar',
+  },
+]
