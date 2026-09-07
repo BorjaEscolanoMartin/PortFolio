@@ -4,7 +4,7 @@ export const projects = [
     id: 1,
     title: 'TuyTu Tech',
     description:
-      'Desarrollo íntegro de la web pública de TuyTu: arquitectura React 19 + TypeScript sobre un único Worker de Cloudflare que sirve assets y API, datos en Supabase, validación con Zod, protección antibot con Turnstile y CSP estricta fijada por tests. Actualmente en el equipo de Core, con revisión de código en PR y tests en CI con mocks de modelos de ML.',
+      'Desarrollo íntegro de la web pública de TuyTu: arquitectura React 19 + TypeScript sobre un único Worker de Cloudflare que sirve assets y API, datos en Supabase, validación con Zod, protección antibot con Turnstile y CSP estricta fijada por tests. Colaboración en un producto real: actualmente en el equipo de Core, con revisión de código en PR y tests en CI con mocks de modelos de ML.',
     technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Cloudflare Workers', 'Supabase', 'React Router', 'Zod', 'Vitest'],
     image: `${import.meta.env.BASE_URL}Tuytu.webp`,
     githubUrl: null,

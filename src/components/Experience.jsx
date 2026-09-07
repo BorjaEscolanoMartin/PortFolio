@@ -1,7 +1,7 @@
 // src/components/Experience.jsx
 const experiences = [
   {
-    role: "Desarrollador Full-Stack",
+    role: "Desarrollador Full-Stack (colaboración)",
     company: "TuyTu Tech",
     period: "2026 – Actualidad",
     bullets: [

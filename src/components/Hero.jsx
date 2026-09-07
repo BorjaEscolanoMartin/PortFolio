@@ -90,7 +90,7 @@ export default function Hero() {
           <div className="w-full md:w-2/3 flex items-center justify-center pr-2 lg:pl-16">
           <div className="text-center lg:text-left">
             <p className="uppercase text-sm tracking-widest text-gray-400 mb-4">
-              Disponible para trabajar
+              Disponible para incorporación inmediata
             </p>            <h1 className="text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-extrabold leading-tight tracking-normal">
               Desarrollador <span className="whitespace-nowrap">Full-Stack</span>
               <span className="block text-lime-400 font-bold text-lg md:text-xl lg:text-lg xl:text-2xl mt-3 lg:whitespace-nowrap">
