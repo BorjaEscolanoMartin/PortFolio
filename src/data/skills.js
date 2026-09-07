@@ -1,4 +1,7 @@
 // src/data/skills.js
+import { TbApi } from 'react-icons/tb';
+import { FaDatabase, FaCrosshairs } from 'react-icons/fa';
+import { BiLineChart, BiBarChart, BiSliderAlt } from 'react-icons/bi';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaGithub, FaPython, FaAws, FaFileExcel } from 'react-icons/fa'
 import {
   SiTypescript,
@@ -58,10 +61,10 @@ export const skillGroups = [
       { name: 'PHP', icon: SiPhp },
       { name: 'Laravel', icon: SiLaravel },
       { name: 'FastAPI', icon: SiFastapi },
-      { name: 'API REST', icon: null },
+      { name: 'API REST', icon: TbApi },
       { name: 'MySQL', icon: SiMysql },
       { name: 'PostgreSQL', icon: SiPostgresql },
-      { name: 'SQL', icon: null },
+      { name: 'SQL', icon: FaDatabase },
       { name: 'Supabase', icon: SiSupabase },
     ],
   },
@@ -74,8 +77,8 @@ export const skillGroups = [
       { name: 'Python', icon: FaPython },
       { name: 'pandas', icon: SiPandas },
       { name: 'NumPy', icon: SiNumpy },
-      { name: 'Matplotlib', icon: null },
-      { name: 'Power BI', icon: null },
+      { name: 'Matplotlib', icon: BiLineChart },
+      { name: 'Power BI', icon: BiBarChart },
       { name: 'Excel', icon: FaFileExcel },
       { name: 'Tableau', icon: SiTableau },
       { name: 'KNIME', icon: SiKnime },
@@ -92,13 +95,13 @@ export const skillGroups = [
       { name: 'scikit-learn', icon: SiScikitlearn },
       { name: 'TensorFlow', icon: SiTensorflow },
       { name: 'Keras', icon: SiKeras },
-      { name: 'YOLO', icon: null },
+      { name: 'YOLO', icon: FaCrosshairs },
       { name: 'OpenCV', icon: SiOpencv },
       { name: 'LangChain', icon: SiLangchain },
       { name: 'Hugging Face', icon: SiHuggingface },
       { name: 'Ollama', icon: SiOllama },
       { name: 'Streamlit', icon: SiStreamlit },
-      { name: 'Gradio', icon: null },
+      { name: 'Gradio', icon: BiSliderAlt },
     ],
   },
   {

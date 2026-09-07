@@ -149,7 +149,11 @@ export default function Hero() {
         <div className="mt-12 lg:mt-16 mb-14" id="tecnologias">
           <div className="space-y-6 px-6 sm:px-10 md:px-12 lg:px-14">
             {technologyRows.map((row, rowIndex) => (
-              <div key={rowIndex} className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+              <div
+                key={rowIndex}
+                className="grid gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center mx-auto"
+                style={{ gridTemplateColumns: `repeat(${row.length}, minmax(0, 1fr))`, width: `${(row.length / 7) * 100}%` }}
+              >
                 {row.map((tech) => {
                   const IconComponent = tech.icon;
                   return (
