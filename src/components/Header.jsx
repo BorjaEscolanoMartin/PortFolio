@@ -22,9 +22,10 @@ export default function Header() {
           <div className="text-xl font-bold tracking-wide">BEM_DEV</div>
         </a>        
         {/* Navegación desktop */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-12 font-bold text-sm tracking-wide whitespace-nowrap">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-10 font-bold text-sm tracking-normal whitespace-nowrap">
           <a href="#inicio" className="hover:text-lime-400 transition">INICIO</a>
           <a href="#sobre-mi" className="hover:text-lime-400 transition">SOBRE MÍ</a>
+          <a href="#competencias" className="hover:text-lime-400 transition">COMPETENCIAS</a>
           <a href="#experiencia" className="hover:text-lime-400 transition">EXPERIENCIA</a>
           <a href="#proyectos" className="hover:text-lime-400 transition">PROYECTOS</a>
           <a href="#contacto" className="hover:text-lime-400 transition">CONTACTO</a>
@@ -61,12 +62,19 @@ export default function Header() {
             >
               INICIO
             </a>
-            <a 
-              href="#sobre-mi" 
+            <a
+              href="#sobre-mi"
               className="font-bold text-sm tracking-wide hover:text-lime-400 transition py-2"
               onClick={closeMenu}
             >
               SOBRE MÍ
+            </a>
+            <a
+              href="#competencias"
+              className="font-bold text-sm tracking-wide hover:text-lime-400 transition py-2"
+              onClick={closeMenu}
+            >
+              COMPETENCIAS
             </a>
             <a
               href="#experiencia"
