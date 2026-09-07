@@ -16,8 +16,8 @@ export const projects = [
     id: 2,
     title: 'DataInsight AI',
     description:
-      'Plataforma web que transforma archivos CSV en análisis completos sin escribir código. Ofrece perfilado estadístico, dashboard interactivo con visualizaciones automáticas, insights en lenguaje natural generados por Claude (Anthropic) y predicciones con Prophet o scikit-learn para series temporales.',
-    technologies: ['Python', 'Node.js', 'FastAPI', 'React', 'Supabase', 'Claude API', 'Prophet', 'scikit-learn', 'pandas'],
+      'Plataforma web que transforma archivos CSV en análisis completos sin escribir código. Ofrece perfilado estadístico, dashboard interactivo con visualizaciones automáticas, insights en lenguaje natural generados por Claude (Anthropic) y predicciones de series temporales con statsmodels (Holt-Winters) y scikit-learn.',
+    technologies: ['Python', 'FastAPI', 'Next.js', 'React', 'Supabase', 'Claude API', 'statsmodels', 'scikit-learn', 'pandas'],
     image: `${import.meta.env.BASE_URL}DataInsightAI.webp`,
     githubUrl: 'https://github.com/BorjaEscolanoMartin/DataInsightAI',
     demoUrl: 'https://data-insight-ai-qbh4.vercel.app/',
@@ -65,8 +65,8 @@ export const projects = [
     id: 6,
     title: 'Email Automation Matrícula',
     description:
-      'Pipeline automatizado de procesamiento de matrículas: lectura de correo vía IMAP, extracción de datos desde PDFs con OCR y parsing de QR, generación de respuesta automática por SMTP. Infraestructura de correo completa montada en local con Docker.',
-    technologies: ['Robot Framework', 'RPA Framework', 'Docker', 'SMTP/IMAP', 'pytesseract', 'pyzbar', 'openpyxl', 'pandas'],
+      'Pipeline automatizado de procesamiento de matrículas: lectura de correo vía IMAP, extracción de las imágenes del PDF con PyMuPDF y decodificación del código QR con pyzbar, volcado de los datos a Excel y respuesta automática por SMTP. Infraestructura de correo completa (DNS y dos servidores de correo) montada en local con Docker.',
+    technologies: ['Robot Framework', 'RPA Framework', 'Python', 'Selenium', 'Flask', 'PyMuPDF', 'pyzbar', 'Docker', 'SMTP/IMAP'],
     image: `${import.meta.env.BASE_URL}EmailAutomationMatricula.webp`,
     githubUrl: 'https://github.com/BorjaEscolanoMartin/EmailAutomationMatricula',
     demoUrl: null,
