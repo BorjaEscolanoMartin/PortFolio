@@ -55,6 +55,16 @@ describe('Projects', () => {
     expect(within(card).queryByText('GitHub')).not.toBeInTheDocument()
   })
 
+  it('un proyecto con reportUrl renderiza el enlace "Informe (PDF)"', () => {
+    render(<Projects />)
+    const withReport = projects.find((p) => p.reportUrl)
+    expect(withReport, 'hace falta al menos un proyecto con reportUrl').toBeTruthy()
+
+    const card = screen.getByText(withReport.title).closest('.group')
+    const link = within(card).getByRole('link', { name: /Informe \(PDF\)/ })
+    expect(link).toHaveAttribute('href', withReport.reportUrl)
+  })
+
   it('todas las imágenes de los proyectos existen en public/', () => {
     projects.forEach((project) => {
       const filename = path.basename(project.image)

@@ -161,6 +161,20 @@ export default function Projects() {
                   )}
                 </div>
 
+                {project.reportUrl && (
+                  <a
+                    href={project.reportUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 w-full bg-gray-700/50 hover:bg-gray-600/50 text-white text-center py-2 px-4 rounded-lg transition-all duration-300 hover:transform hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1zm7 0v5h5" />
+                    </svg>
+                    Informe (PDF)
+                  </a>
+                )}
+
                 {/* Nota adicional sobre la demo/repositorio */}
                 {project.note && (
                   <p className="mt-3 text-xs text-gray-500 italic">{project.note}</p>
