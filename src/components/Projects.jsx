@@ -1,67 +1,20 @@
 // src/components/Projects.jsx
+import { useState } from 'react';
+import { projects } from '../data/projects';
+
+const FILTERS = [
+  { id: 'all', label: 'Todos' },
+  { id: 'web', label: 'Web' },
+  { id: 'datos-ia', label: 'Datos e IA' },
+];
+
 export default function Projects() {
-  const projects = [
-    {
-      id: 1,
-      title: "TuyTu Tech",
-      description: "Desarrollo íntegro de la web pública de TuyTu: arquitectura React 19 + TypeScript sobre un único Worker de Cloudflare que sirve assets y API, datos en Supabase, validación con Zod, protección antibot con Turnstile y CSP estricta fijada por tests. Actualmente en equipo de Core, desarrollo y entrenamiento del algoritmo preventivo.",
-      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Cloudflare Workers", "Supabase", "React Router", "Zod", "Vitest"],
-      image: `${import.meta.env.BASE_URL}Tuytu.webp`,
-      githubUrl: null,
-      demoUrl: "https://tuytu.tech",
-      status: "En desarrollo"
-    },
-    {
-      id: 2,
-      title: "DataInsight AI",
-      description: "Plataforma web que transforma archivos CSV en análisis completos sin escribir código. Ofrece perfilado estadístico, dashboard interactivo con visualizaciones automáticas, insights en lenguaje natural generados por Claude (Anthropic) y predicciones con Prophet o scikit-learn para series temporales.",
-      technologies: ["Python", "Node.js", "FastAPI", "React", "Supabase", "Claude API", "Prophet", "scikit-learn", "pandas"],
-      image: `${import.meta.env.BASE_URL}DataInsightAI.webp`,
-      githubUrl: "https://github.com/BorjaEscolanoMartin/DataInsightAI",
-      demoUrl: "https://data-insight-ai-qbh4.vercel.app/",
-      status: "Completado"
-    },
-    {
-      id: 3,
-      title: "Email Automation Matrícula",
-      description: "Pipeline automatizado de procesamiento de matrículas: lectura de correo vía IMAP, extracción de datos desde PDFs con OCR y parsing de QR, generación de respuesta automática por SMTP. Infraestructura de correo completa montada en local con Docker.",
-      technologies: ["Robot Framework", "RPA Framework", "Docker", "SMTP/IMAP", "pytesseract", "pyzbar", "openpyxl", "pandas"],
-      image: `${import.meta.env.BASE_URL}EmailAutomationMatricula.webp`,
-      githubUrl: "https://github.com/BorjaEscolanoMartin/EmailAutomationMatricula",
-      demoUrl: null,
-      status: "Completado"
-    },
-    {
-      id: 4,
-      title: "Pets - Plataforma de alojamiento de mascotas",
-      description: "Proyecto final de grado, full stack con autenticación, roles de usuario, perfiles, reservas, chat en tiempo real, notificaciones, filtros avanzados, mapas y subida de imágenes.",
-      technologies: ["Laravel", "React", "Tailwind CSS", "Docker", "Nginx", "AWS"],
-      image: `${import.meta.env.BASE_URL}Pets.webp`,
-      githubUrl: "https://github.com/BorjaEscolanoMartin/PlataformaPets",
-      demoUrl: "http://13.36.139.63/",
-      status: "Completado"
-    },
-    {
-      id: 5,
-      title: "Plataforma Domótica con LLM",
-      description: "Integración de un LLM local (Ollama) con OpenHAB para el control domótico por lenguaje natural. Aplicado a un centro educativo ficticio, implementa function calling para ejecutar acciones sobre dispositivos y escucha reactiva de eventos vía SSE.",
-      technologies: ["Python", "Ollama", "OpenHAB", "Docker", "SSE", "Function Calling"],
-      image: `${import.meta.env.BASE_URL}PlataformaDomotica.webp`,
-      githubUrl: "https://github.com/BorjaEscolanoMartin/PlataformaDomotica",
-      demoUrl: null,
-      status: "Completado"
-    },
-    {
-      id: 6,
-      title: "Iris ML Prediction",
-      description: "Clasificador de la especie Iris con red neuronal Keras. Doble frontend con Gradio y Streamlit sobre un núcleo de predicción compartido. Modelo completamente reproducible vía train.py.",
-      technologies: ["Python", "TensorFlow", "Keras", "scikit-learn", "Gradio", "Streamlit"],
-      image: `${import.meta.env.BASE_URL}IrisMlPrediction.webp`,
-      githubUrl: "https://github.com/BorjaEscolanoMartin/iris-ml-prediction",
-      demoUrl: "https://huggingface.co/spaces/BemDev/Proyecto_Iris-BEM",
-      status: "Completado"
-    }
-  ];
+  const [filter, setFilter] = useState('all');
+
+  const filteredProjects =
+    filter === 'all'
+      ? projects
+      : projects.filter((project) => project.categories.includes(filter));
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -77,35 +30,58 @@ export default function Projects() {
   };
   return (    <section className="text-white pt-8 pb-24 px-6">
       <div className="max-w-7xl mx-auto">        {/* Línea separadora encima del título */}
-        <div 
+        <div
           className="h-1 w-full relative mt-6 mb-8"
           style={{
             background: 'linear-gradient(to right, transparent 0%, rgba(163, 230, 53, 0.3) 8%, #a3e635 22%, #a3e635 78%, rgba(163, 230, 53, 0.3) 92%, transparent 100%)'
           }}
         >
           {/* Línea central más brillante */}
-          <div 
+          <div
             className="absolute left-0 right-0 h-0.5 top-1/2 transform -translate-y-1/2"
             style={{
               background: 'linear-gradient(to right, transparent 0%, rgba(163, 230, 53, 0.8) 12%, #a3e635 27%, #a3e635 73%, rgba(163, 230, 53, 0.8) 88%, transparent 100%)'
             }}
           ></div>
         </div>
-        
+
         {/* Título principal */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-20">
           PROYECTOS
         </h2>
-        
+
         {/* Subtítulo */}
-        <p className="text-center text-gray-400 text-lg mb-20 max-w-3xl mx-auto">
-          Una colección de proyectos que demuestran mis habilidades en desarrollo web, 
-          desde aplicaciones completas hasta interfaces modernas y funcionales.
+        <p className="text-center text-gray-400 text-lg mb-10 max-w-3xl mx-auto">
+          Una colección de proyectos que combina desarrollo web full-stack con análisis
+          de datos e inteligencia artificial, desde aplicaciones completas hasta
+          modelos y dashboards de datos.
         </p>
+
+        {/* Filtro de categorías */}
+        <div className="flex flex-wrap justify-center gap-3 mb-20">
+          {FILTERS.map((f) => {
+            const isActive = filter === f.id;
+            return (
+              <button
+                key={f.id}
+                type="button"
+                onClick={() => setFilter(f.id)}
+                aria-pressed={isActive}
+                className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-300 ${
+                  isActive
+                    ? 'bg-lime-400 text-black border-lime-400'
+                    : 'bg-gray-800/50 text-gray-300 border-gray-700/50 hover:border-lime-400/50 hover:text-lime-400'
+                }`}
+              >
+                {f.label}
+              </button>
+            );
+          })}
+        </div>
 
         {/* Grid de proyectos */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden hover:border-lime-400/30 transition-all duration-300 hover:transform hover:scale-[1.02]"
@@ -122,7 +98,7 @@ export default function Projects() {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
-                
+
                 {/* Badge de estado */}
                 <div className="absolute top-4 right-4">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(project.status)}`}>
@@ -184,6 +160,11 @@ export default function Projects() {
                     </a>
                   )}
                 </div>
+
+                {/* Nota adicional sobre la demo/repositorio */}
+                {project.note && (
+                  <p className="mt-3 text-xs text-gray-500 italic">{project.note}</p>
+                )}
               </div>
             </div>
           ))}
