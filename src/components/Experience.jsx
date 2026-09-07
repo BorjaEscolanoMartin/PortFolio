@@ -3,7 +3,7 @@ const experiences = [
   {
     role: "Desarrollador Full-Stack",
     company: "TuyTu Tech",
-    period: "2026",
+    period: "2026 – Actualidad",
     bullets: [
       "Plataforma de protección de imágenes frente a deepfakes, aplicando perturbaciones adversariales sobre modelos de IA generativa.",
       "Desarrollo completo del producto web: la web pública (tuytu.tech) sobre un único Worker de Cloudflare con Supabase, y el dashboard en React/TypeScript con subida multi-archivo y procesado por lotes contra una API en Python/FastAPI.",
@@ -14,7 +14,7 @@ const experiences = [
   {
     role: "Desarrollador Web en prácticas",
     company: "Ayuntamiento de Novelda",
-    period: "2025",
+    period: "Mayo – Julio 2025",
     bullets: [
       "Desarrollo y mantenimiento de webs de servicios municipales para distintas áreas (juventud, cultura...).",
       "Maquetación y estructuración de contenidos con foco en la experiencia de usuario.",
