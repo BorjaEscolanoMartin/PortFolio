@@ -22,9 +22,3 @@ export const education = [
     detail: 'Completado',
   },
 ]
-
-export const languages = [
-  { id: 'espanol', name: 'Español', level: 'Nativo' },
-  { id: 'valenciano', name: 'Valenciano', level: 'Avanzado' },
-  { id: 'ingles', name: 'Inglés', level: 'Intermedio' },
-]

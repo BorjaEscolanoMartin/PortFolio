@@ -1,5 +1,5 @@
 // src/components/About.jsx
-import { education, languages } from '../data/education';
+import { education } from '../data/education';
 
 export default function About() {
   return (
@@ -85,24 +85,6 @@ export default function About() {
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
                   Análisis de datos, Machine Learning e IA aplicada
                 </li>
-              </ul>
-            </div>
-
-            {/* Tarjeta de idiomas */}
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-lime-400/30 transition-all duration-300">
-              <h4 className="text-xl font-bold text-white mb-3">
-                Idiomas
-              </h4>
-              <ul className="space-y-2 text-gray-300">
-                {languages.map((lang) => (
-                  <li key={lang.id} className="flex items-center justify-between">
-                    <span className="flex items-center">
-                      <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                      {lang.name}
-                    </span>
-                    <span className="text-gray-400 text-sm">{lang.level}</span>
-                  </li>
-                ))}
               </ul>
             </div>
           </div>
