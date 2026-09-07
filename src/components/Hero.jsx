@@ -91,7 +91,7 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <p className="uppercase text-sm tracking-widest text-gray-400 mb-4">
               Disponible para trabajar
-            </p>            <h1 className="text-4xl md:text-5xl lg:text-4xl xl:text-[2.75rem] font-extrabold leading-tight tracking-normal">
+            </p>            <h1 className="text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-extrabold leading-tight tracking-normal">
               Desarrollador <span className="whitespace-nowrap">Full-Stack</span>
               <span className="block text-lime-400 font-bold text-lg md:text-xl lg:text-lg xl:text-2xl mt-3 lg:whitespace-nowrap">
                 Analista de datos · Máster de FP en IA y Big Data
@@ -119,7 +119,7 @@ export default function Hero() {
         </div>
 
         {/* Imagen - Lado derecho */}
-        <div className="hidden md:flex w-1/3 h-full items-center justify-center relative transform md:translate-x-4 lg:-translate-x-12">
+        <div className="hidden md:flex w-1/3 h-full items-center justify-center relative transform md:translate-x-4 lg:-translate-x-6">
           <div className="relative">
             <img
               src={`${import.meta.env.BASE_URL}Yop.webp`}
