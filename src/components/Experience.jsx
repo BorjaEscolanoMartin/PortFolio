@@ -7,8 +7,8 @@ const experiences = [
     bullets: [
       "Plataforma de protección de imágenes frente a deepfakes, aplicando perturbaciones adversariales sobre modelos de IA generativa.",
       "Desarrollo completo del producto web: la web pública (tuytu.tech) sobre un único Worker de Cloudflare con Supabase, y el dashboard en React/TypeScript con subida multi-archivo y procesado por lotes contra una API en Python/FastAPI.",
-      "Actualmente en el equipo de Core, desarrollo y entrenamiento del algoritmo que aplica la capa preventiva.",
-      "Calidad de código en equipo: revisión de PRs, testing en CI con mocks de modelos ML (ONNX) y flujo colaborativo en GitHub.",
+      "Incorporación al equipo de Core para el desarrollo del algoritmo de protección preventiva.",
+      "Revisión de código en PR y mantenimiento de tests en CI con mocks de modelos de ML, en un flujo colaborativo en GitHub.",
     ],
   },
   {
