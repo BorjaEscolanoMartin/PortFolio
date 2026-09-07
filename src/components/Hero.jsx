@@ -1,72 +1,21 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
-import {
-  FaReact,
-  FaJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaNodeJs,
-  FaGitAlt,
-  FaPython,
-  FaAws
-} from 'react-icons/fa';
-import {
-  SiTailwindcss,
-  SiTypescript,
-  SiVite,
-  SiDocker,
-  SiLaravel,
-  SiPhp,
-  SiMysql,
-  SiPostgresql,
-  SiFirebase,
-  SiSupabase,
-  SiVercel,
-  SiPandas,
-  SiNumpy,
-  SiScikitlearn,
-  SiTensorflow,
-  SiJupyter,
-  SiGooglecolab
-} from 'react-icons/si';
-export default function Hero() {
+import { skillGroups } from '../data/skills';
 
-  const technologies = [
-    // Frontend (fila 1 - 7 iconos)
-    { name: 'React', icon: FaReact },
-    { name: 'JavaScript', icon: FaJs },
-    { name: 'HTML5', icon: FaHtml5 },
-    { name: 'CSS3', icon: FaCss3Alt },
-    { name: 'Tailwind CSS', icon: SiTailwindcss },
-    { name: 'TypeScript', icon: SiTypescript },
-    { name: 'Vite', icon: SiVite },
-    // Backend + BD (fila 2 - 8 iconos)
-    { name: 'PHP', icon: SiPhp },
-    { name: 'Laravel', icon: SiLaravel },
-    { name: 'Node.js', icon: FaNodeJs },
-    { name: 'Firebase', icon: SiFirebase },
-    { name: 'MySQL', icon: SiMysql },
-    { name: 'PostgreSQL', icon: SiPostgresql },
-    { name: 'Supabase', icon: SiSupabase },
-    // Herramientas (fila 3 - 7 iconos)
-    { name: 'Git', icon: FaGitAlt },
-    { name: 'GitHub', icon: FaGithub },
-    { name: 'Docker', icon: SiDocker },
-    { name: 'AWS', icon: FaAws },
-    { name: 'Vercel', icon: SiVercel },
-    { name: 'Railway', icon: null, bigText: true },
-    { name: 'Google Colab', icon: SiGooglecolab },
-    // IA y Big Data (fila 4 - 7 iconos)
-    { name: 'Python', icon: FaPython },
-    { name: 'Pandas', icon: SiPandas },
-    { name: 'NumPy', icon: SiNumpy },
-    { name: 'Matplotlib', icon: null, bigText: true },
-    { name: 'Scikit-learn', icon: SiScikitlearn },
-    { name: 'TensorFlow', icon: SiTensorflow },
-    { name: 'Jupyter', icon: SiJupyter },
-  ];
+// Vista compacta del stack para el Hero: los primeros N items de cada grupo
+// de skills.js, repartidos en filas de como máximo 7 iconos (sin duplicar
+// datos a mano).
+const ITEMS_PER_GROUP = 5;
+const ROW_SIZE = 7;
+
+const heroTechnologies = skillGroups.flatMap((group) => group.items.slice(0, ITEMS_PER_GROUP));
+const technologyRows = [];
+for (let i = 0; i < heroTechnologies.length; i += ROW_SIZE) {
+  technologyRows.push(heroTechnologies.slice(i, i + ROW_SIZE));
+}
+
+export default function Hero() {
   return (    <section
         className="relative text-white min-h-[400px] md:min-h-[550px] lg:min-h-[550px] flex items-start pt-16 pb-16 overflow-hidden"
-        id="inicio"
     >    {/* Lateral izquierdo */}
       {/* Altura fija (no calc del 100%) para que la flecha termine a la altura del icono
           de correo del lateral derecho, que tambien es de altura fija por contenido.
@@ -149,7 +98,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Diseño y desarrollo aplicaciones web aplicando principios de Clean Architecture: código desacoplado, testable y preparado para escalar. Del frontend al despliegue, con machine learning y análisis de datos como especialización.
+              Diseño y desarrollo de aplicaciones web aplicando principios de Clean Architecture: código desacoplado, testable y preparado para escalar. Del frontend al despliegue, con machine learning y análisis de datos como especialización.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a
@@ -159,8 +108,8 @@ export default function Hero() {
                 Ver proyectos
               </a>
               <a
-                href={`${import.meta.env.BASE_URL}CV.pdf`}
-                download="CV.pdf"
+                href={`${import.meta.env.BASE_URL}Borja_Escolano_Martin_CV.pdf`}
+                download="Borja_Escolano_Martin_CV.pdf"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-lime-400 text-lime-400 font-semibold rounded-full hover:bg-lime-400 hover:text-black transition w-50"
               >
                 <FaDownload className="text-sm" />
@@ -199,65 +148,21 @@ export default function Hero() {
         </div>        {/* Sección de TechStack integrada - debajo de las dos columnas */}
         <div className="mt-12 lg:mt-16 mb-14" id="tecnologias">
           <div className="space-y-6 px-6 sm:px-10 md:px-12 lg:px-14">
-            {/* Fila 1 - Frontend (7 iconos) */}
-            <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
-              {technologies.slice(0, 7).map((tech, index) => {
-                const IconComponent = tech.icon;
-                return (
-                  <div key={index} className="group flex items-center justify-center w-full" title={tech.name}>
-                    {IconComponent
-                      ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
-                      : <span className={`${tech.bigText ? 'text-[9px] sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
-                    }
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Fila 2 - Backend + BD (7 iconos) */}
-            <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
-              {technologies.slice(7, 14).map((tech, index) => {
-                const IconComponent = tech.icon;
-                return (
-                  <div key={index + 7} className="group flex items-center justify-center w-full" title={tech.name}>
-                    {IconComponent
-                      ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
-                      : <span className={`${tech.bigText ? 'text-[9px] sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
-                    }
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Fila 3 - Herramientas (7 iconos) */}
-            <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
-              {technologies.slice(14, 21).map((tech, index) => {
-                const IconComponent = tech.icon;
-                return (
-                  <div key={index + 15} className="group flex items-center justify-center w-full" title={tech.name}>
-                    {IconComponent
-                      ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
-                      : <span className={`${tech.bigText ? 'text-[9px] sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
-                    }
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Fila 4 - IA y Big Data (7 iconos) */}
-            <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
-              {technologies.slice(21, 28).map((tech, index) => {
-                const IconComponent = tech.icon;
-                return (
-                  <div key={index + 21} className="group flex items-center justify-center w-full" title={tech.name}>
-                    {IconComponent
-                      ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
-                      : <span className={`${tech.bigText ? 'text-[9px] sm:text-sm' : 'text-[10px] sm:text-xs'} font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight`}>{tech.name}</span>
-                    }
-                  </div>
-                );
-              })}
-            </div>
+            {technologyRows.map((row, rowIndex) => (
+              <div key={rowIndex} className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-8 lg:gap-12 place-items-center">
+                {row.map((tech) => {
+                  const IconComponent = tech.icon;
+                  return (
+                    <div key={tech.name} className="group flex items-center justify-center w-full" title={tech.name}>
+                      {IconComponent
+                        ? <IconComponent className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300" />
+                        : <span className="text-[10px] sm:text-xs font-bold text-white hover:text-lime-400 group-hover:scale-110 transition-all duration-300 text-center leading-tight">{tech.name}</span>
+                      }
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
