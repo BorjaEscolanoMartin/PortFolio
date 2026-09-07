@@ -27,6 +27,18 @@ export const projects = [
   },
   {
     id: 3,
+    title: 'Pets - Plataforma de alojamiento de mascotas',
+    description:
+      'Proyecto final de grado, full stack con autenticación, roles de usuario, perfiles, reservas, chat en tiempo real, notificaciones, filtros avanzados, mapas y subida de imágenes.',
+    technologies: ['Laravel', 'React', 'Tailwind CSS', 'Docker', 'Nginx', 'AWS'],
+    image: `${import.meta.env.BASE_URL}Pets.webp`,
+    githubUrl: 'https://github.com/BorjaEscolanoMartin/PlataformaPets',
+    demoUrl: null,
+    status: 'Completado',
+    categories: ['web'],
+  },
+  {
+    id: 4,
     title: 'Cuadro de mando de ventas en Power BI',
     description:
       'Cuadro de mando interactivo de ventas y rentabilidad construido en Power BI Desktop, con medidas DAX personalizadas y limpieza de datos con Power Query. Incluye visualizaciones por país, continente y periodo (mapa, gráficos y tarjetas KPI) publicadas en el servicio Power BI.',
@@ -38,7 +50,7 @@ export const projects = [
     categories: ['datos-ia'],
   },
   {
-    id: 4,
+    id: 5,
     title: 'Chatbot RAG con LangChain',
     description:
       'Chatbot conversacional con memoria que responde preguntas sobre documentos PDF mediante RAG (Retrieval Augmented Generation), con recuperación en Chroma y búsqueda MMR. Permite alternar entre la API de Gemini y un modelo Ollama local, con interfaz Streamlit desplegada en Hugging Face Spaces vía Docker.',
@@ -50,7 +62,7 @@ export const projects = [
     categories: ['datos-ia'],
   },
   {
-    id: 5,
+    id: 6,
     title: 'Detección de objetos con YOLO',
     description:
       'Serie de ejercicios de visión por computador con YOLO (Ultralytics): inferencia y detección en tiempo real sobre vídeo con OpenCV, una interfaz Streamlit para explorar distintas tareas del modelo, y el fine-tuning de un detector de fuego propio integrado en la misma interfaz.',
@@ -62,7 +74,7 @@ export const projects = [
     categories: ['datos-ia'],
   },
   {
-    id: 6,
+    id: 7,
     title: 'Email Automation Matrícula',
     description:
       'Pipeline automatizado de procesamiento de matrículas: lectura de correo vía IMAP, extracción de las imágenes del PDF con PyMuPDF y decodificación del código QR con pyzbar, volcado de los datos a Excel y respuesta automática por SMTP. Infraestructura de correo completa (DNS y dos servidores de correo) montada en local con Docker.',
@@ -72,18 +84,6 @@ export const projects = [
     demoUrl: null,
     status: 'Completado',
     categories: ['datos-ia'],
-  },
-  {
-    id: 7,
-    title: 'Pets - Plataforma de alojamiento de mascotas',
-    description:
-      'Proyecto final de grado, full stack con autenticación, roles de usuario, perfiles, reservas, chat en tiempo real, notificaciones, filtros avanzados, mapas y subida de imágenes.',
-    technologies: ['Laravel', 'React', 'Tailwind CSS', 'Docker', 'Nginx', 'AWS'],
-    image: `${import.meta.env.BASE_URL}Pets.webp`,
-    githubUrl: 'https://github.com/BorjaEscolanoMartin/PlataformaPets',
-    demoUrl: null,
-    status: 'Completado',
-    categories: ['web'],
   },
   {
     id: 8,
