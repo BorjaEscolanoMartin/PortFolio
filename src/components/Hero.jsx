@@ -91,9 +91,9 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <p className="uppercase text-sm tracking-widest text-gray-400 mb-4">
               Disponible para trabajar
-            </p>            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-normal">
-              Desarrollador Full-Stack
-              <span className="block text-lime-400 text-3xl md:text-4xl mt-3">
+            </p>            <h1 className="text-4xl md:text-5xl lg:text-4xl xl:text-[2.75rem] font-extrabold leading-tight tracking-normal">
+              Desarrollador <span className="whitespace-nowrap">Full-Stack</span>
+              <span className="block text-lime-400 font-bold text-lg md:text-xl lg:text-lg xl:text-2xl mt-3 lg:whitespace-nowrap">
                 Analista de datos · Máster de FP en IA y Big Data
               </span>
             </h1>
