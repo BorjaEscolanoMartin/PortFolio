@@ -21,4 +21,11 @@ export const education = [
     years: '2026',
     detail: 'Completado',
   },
+  {
+    id: 'matlab-onramp',
+    title: 'MATLAB Onramp',
+    institution: 'MathWorks',
+    years: '2026',
+    detail: 'Completado',
+  },
 ]
