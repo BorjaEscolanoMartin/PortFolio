@@ -55,17 +55,23 @@ export default function Hero() {
         {/* Espaciador entre SÍGUEME y flecha */}
         <div className="mt-12"></div>
         
-        {/* Flecha hacia abajo personalizada */}
+        {/* Flecha hacia abajo personalizada: misma imagen que la del lateral izquierdo,
+            con 9-slice para estirar solo el tramo recto y conservar la punta sin recortar */}
         <div className="flex flex-col items-center">
-          <img
-            src={`${import.meta.env.BASE_URL}flecha.png`}
-            alt="Scroll down arrow"
-            className="w-5 h-72 object-cover"
+          <div
+            aria-hidden="true"
+            className="w-20 h-[316px]"
+            style={{
+              borderStyle: 'solid',
+              borderWidth: '14px 0 57px 0',
+              borderImage: `url("${import.meta.env.BASE_URL}flecha.png") 25 0 100 0 fill stretch`,
+            }}
           />
         </div>
 
-        {/* Espaciador antes de iconos sociales */}
-        <div className="mt-12"></div>
+        {/* Espaciador antes de iconos sociales: mas corto que el superior porque la punta
+            de la flecha deja hueco transparente debajo y SÍGUEME, al estar rotado, invade el suyo */}
+        <div className="mt-5"></div>
         
         <div className="flex flex-col gap-4 text-2xl">
           <a href="https://github.com/BorjaEscolanoMartin/" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-white hover:text-lime-400 transition-colors duration-300">
