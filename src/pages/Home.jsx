@@ -55,10 +55,13 @@ export default function Home() {
       <div 
         className="relative"
         style={{
-          backgroundImage: `url("${import.meta.env.BASE_URL}fondo2.webp")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          // SVG vectorial en mosaico vertical: nítido a cualquier alto y densidad
+          // de pantalla. Ancho mínimo de 1100px para que en móvil no se comprima.
+          // Se regenera con scripts/generar-fondo-ondas.py
+          backgroundImage: `url("${import.meta.env.BASE_URL}fondo-ondas.svg")`,
+          backgroundSize: 'max(100%, 1100px) auto',
+          backgroundPosition: 'center top',
+          backgroundRepeat: 'repeat-y'
         }}
       >
         {/* Degradado de transición desde arriba */}
