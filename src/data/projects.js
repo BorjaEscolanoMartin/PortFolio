@@ -16,7 +16,7 @@ export const projects = [
     id: 2,
     title: 'DataInsight AI',
     description:
-      'Plataforma web que convierte un CSV en un informe sin escribir código: perfil de cada columna, gráficos que se adaptan a los datos, hallazgos redactados por Claude cuyas cifras se validan contra el propio CSV, y previsión Holt-Winters con intervalo del 95 % y error medido en backtest (WAPE), o regresión con Random Forest cuando no hay fechas. API en FastAPI con worker Celery, web en Next.js, tests y CI en GitHub Actions.',
+      'Plataforma web que convierte un CSV en un informe sin escribir código: perfil de cada columna, gráficos que se adaptan a los datos, hallazgos redactados por Claude con sus cifras comprobadas contra los datos, y previsión Holt-Winters con intervalo del 95 % y error medido en backtest (WAPE), o regresión con Random Forest cuando no hay fechas. API en FastAPI con worker Celery, web en Next.js, tests y CI en GitHub Actions.',
     technologies: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'Supabase', 'Celery', 'Claude API', 'statsmodels', 'scikit-learn', 'pandas'],
     image: `${import.meta.env.BASE_URL}DataInsightAI-v2.webp`,
     githubUrl: 'https://github.com/BorjaEscolanoMartin/DataInsightAI',
