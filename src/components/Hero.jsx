@@ -104,7 +104,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Aplicaciones web de principio a fin con React, TypeScript y Python (FastAPI), y las combino con datos e IA: análisis con SQL y Power BI, modelos de machine learning e integración de LLM. Con tests, CI y revisión de código en cada cambio.
+              Aplicaciones web de principio a fin con React, TypeScript y Python (FastAPI), combinadas con datos e IA: análisis con SQL y Power BI, modelos de machine learning e integración de LLM. Con tests, CI y revisión de código en cada cambio.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a
