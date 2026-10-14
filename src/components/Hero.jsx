@@ -100,11 +100,11 @@ export default function Hero() {
             </p>            <h1 className="text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-extrabold leading-tight tracking-normal">
               Desarrollador <span className="whitespace-nowrap">Full-Stack</span>
               <span className="block text-lime-400 font-bold text-lg md:text-xl lg:text-lg xl:text-2xl mt-3 lg:whitespace-nowrap">
-                Analista de datos · Máster de FP en IA y Big Data
+                IA aplicada · Máster de FP en IA y Big Data
               </span>
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Diseño y desarrollo de aplicaciones web con Clean Architecture y testing: código desacoplado y preparado para escalar. Y del dato a la decisión: análisis con SQL, Python y Power BI, con machine learning aplicado.
+              Aplicaciones web de principio a fin con React, TypeScript y Python (FastAPI), y las combino con datos e IA: análisis con SQL y Power BI, modelos de machine learning e integración de LLM. Con tests, CI y revisión de código en cada cambio.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a

@@ -18,11 +18,11 @@ export default function About() {
             
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                <span className="text-white font-semibold">Desarrollador Full-Stack</span> con experiencia práctica en el desarrollo de aplicaciones web modernas, participando tanto en <span className="text-lime-400">frontend</span> como en <span className="text-lime-400">backend</span>.
+                <span className="text-white font-semibold">Desarrollador Full-Stack</span> con experiencia práctica en aplicaciones web de principio a fin: frontend con <span className="text-lime-400">React</span> y <span className="text-lime-400">TypeScript</span>, APIs con <span className="text-lime-400">Node.js</span>, <span className="text-lime-400">Python (FastAPI)</span> y <span className="text-lime-400">PHP (Laravel)</span>, bases de datos <span className="text-lime-400">SQL</span> y despliegue con <span className="text-lime-400">Docker</span>.
               </p>
 
               <p>
-                Trabajo la <span className="text-lime-400">lógica de negocio</span>, las <span className="text-lime-400">bases de datos</span> y las <span className="text-lime-400">APIs</span> igual que las <span className="text-lime-400">interfaces responsive</span> y el despliegue, aplicando <span className="text-lime-400">Clean Architecture</span> y <span className="text-lime-400">testing</span> para que el código sea desacoplado, mantenible y escalable.
+                Trabajo con <span className="text-lime-400">decisiones de diseño documentadas</span> antes del código, <span className="text-lime-400">test-first</span>, PR pequeños con <span className="text-lime-400">CI</span> y <span className="text-lime-400">revisión independiente</span> antes de cada merge. El código crítico (autenticación, permisos y datos de usuario) pasa además por una <span className="text-lime-400">revisión de seguridad</span> dedicada.
               </p>
 
               <p>
@@ -79,7 +79,7 @@ export default function About() {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  Clean Architecture, testing y código escalable
+                  Test-first, CI y revisión de código
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
