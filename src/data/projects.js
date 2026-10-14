@@ -20,7 +20,7 @@ export const projects = [
     technologies: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'Supabase', 'Celery', 'Claude API', 'statsmodels', 'scikit-learn', 'pandas'],
     image: `${import.meta.env.BASE_URL}DataInsightAI-v2.webp`,
     githubUrl: 'https://github.com/BorjaEscolanoMartin/DataInsightAI',
-    demoUrl: 'https://data-insight-ai-qbh4.vercel.app/demo',
+    demoUrl: 'https://data-insight-ai-qbh4.vercel.app/login',
     status: 'Completado',
     categories: ['web', 'datos-ia'],
     note: 'Demo pública con datos sintéticos, sin registro',
