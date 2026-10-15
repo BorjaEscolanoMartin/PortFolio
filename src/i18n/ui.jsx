@@ -65,6 +65,11 @@ export const ui = {
         'Machine Learning e IA aplicada: LLMs, visión por computador',
       ],
     },
+    skills: {
+      title: 'COMPETENCIAS',
+      subtitle:
+        'Stack de desarrollo web full-stack combinado con análisis de datos, Business Intelligence e inteligencia artificial aplicada.',
+    },
     footer: {
       tagline: 'Desarrollador Full-Stack · Datos e IA',
     },
@@ -124,6 +129,11 @@ export const ui = {
         'Data analysis and BI: SQL, Python, Power BI',
         'Machine Learning and applied AI: LLMs, computer vision',
       ],
+    },
+    skills: {
+      title: 'SKILLS',
+      subtitle:
+        'A full-stack web development stack combined with data analysis, Business Intelligence and applied artificial intelligence.',
     },
     footer: {
       tagline: 'Full-Stack Developer · Data & AI',

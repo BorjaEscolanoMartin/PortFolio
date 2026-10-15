@@ -17,7 +17,7 @@ Delivery: ask-on-risk. Test runner: Vitest (`npm test`), plus `npm run lint`.
 | T1 | S2, S3 | inline | done | RED: modules missing; GREEN: 14 new tests, suite 27/27, lint clean |
 | T2 | S1, S6 | inline | done | RED: 4 EN tests failing; GREEN: suite 33/33, lint clean |
 | T3 | S1, S3 | inline | done | RED: EN test failing; GREEN: suite 36/36, lint clean |
-| T4 | S1, S3 | inline | pending | |
+| T4 | S1, S3 | inline | done | RED: 2 EN tests failing; GREEN: suite 38/38, lint clean |
 | T5 | S1, S3 | inline | pending | |
 | T6 | S1, S3, S4 | inline | pending | |
 | T7 | S1 | inline | pending | |
@@ -37,3 +37,4 @@ Route evidence: no writer trigger (no parallel units, no context backstop); pare
 - L4: T2: `ui.js` renamed to `ui.jsx` to hold rich text (Hero title word order differs). Header nav built from a `NAV_LINKS` list instead of duplicated markup. EN subtitle drafted as "Applied AI · Vocational Master's in AI & Big Data" (pending Borja's review, S7).
 - L5 (2026-10-15): delivery choice "Una sola entrega": stay on feat/english-version until T8, one integration into master at the end.
 - L6: T3: highlight helpers `Hl`/`Strong` live in `src/i18n/RichText.jsx` (react-refresh lint rule). EN education titles drafted: "Higher Technician Diploma in Web Application Development", "AI Development Course: From Zero to Production" (pending review, S7).
+- L7: T4: skill item names stay shared (they are technology names and React keys); "API REST" is kept as is in English.

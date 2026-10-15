@@ -1,7 +1,11 @@
 // src/components/Skills.jsx
 import { skillGroups } from '../data/skills';
+import { useLanguage } from '../i18n/useLanguage';
+import { localize } from '../i18n/localize';
 
 export default function Skills() {
+  const { lang, t } = useLanguage();
+
   return (
     <section className="text-white pt-8 pb-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -23,13 +27,12 @@ export default function Skills() {
 
         {/* Título principal */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-20">
-          COMPETENCIAS
+          {t.skills.title}
         </h2>
 
         {/* Subtítulo */}
         <p className="text-center text-gray-400 text-lg mb-16 max-w-3xl mx-auto">
-          Stack de desarrollo web full-stack combinado con análisis de datos,
-          Business Intelligence e inteligencia artificial aplicada.
+          {t.skills.subtitle}
         </p>
 
         {/* Grid de grupos de competencias */}
@@ -40,10 +43,10 @@ export default function Skills() {
               className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-lime-400/30 transition-all duration-300"
             >
               <h3 className="text-xl font-bold text-lime-400 mb-2">
-                {group.title}
+                {localize(group.title, lang)}
               </h3>
               <p className="text-gray-400 text-sm mb-5 leading-relaxed">
-                {group.summary}
+                {localize(group.summary, lang)}
               </p>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => {

@@ -8,10 +8,20 @@ describe('skillGroups data', () => {
     expect(uniqueNames.size).toBe(allNames.length)
   })
 
-  it('cada grupo tiene un summary no vacío', () => {
+  it('cada grupo tiene un summary no vacío en español e inglés', () => {
     skillGroups.forEach((group) => {
-      expect(typeof group.summary).toBe('string')
-      expect(group.summary.trim().length).toBeGreaterThan(0)
+      for (const lang of ['es', 'en']) {
+        expect(typeof group.summary[lang]).toBe('string')
+        expect(group.summary[lang].trim().length).toBeGreaterThan(0)
+      }
+    })
+  })
+
+  it('cada título es compartido o tiene versión en español e inglés', () => {
+    skillGroups.forEach((group) => {
+      if (typeof group.title === 'string') return
+      expect(group.title.es).toBeTruthy()
+      expect(group.title.en).toBeTruthy()
     })
   })
 

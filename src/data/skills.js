@@ -39,8 +39,10 @@ export const skillGroups = [
   {
     id: 'frontend',
     title: 'Frontend',
-    summary:
-      'Interfaces modernas, responsive y accesibles con React, TypeScript y Tailwind CSS, usando Vite como herramienta de build.',
+    summary: {
+      es: 'Interfaces modernas, responsive y accesibles con React, TypeScript y Tailwind CSS, usando Vite como herramienta de build.',
+      en: 'Modern, responsive and accessible interfaces with React, TypeScript and Tailwind CSS, using Vite as the build tool.',
+    },
     items: [
       { name: 'React', icon: FaReact },
       { name: 'JavaScript', icon: FaJs },
@@ -53,9 +55,11 @@ export const skillGroups = [
   },
   {
     id: 'backend-bd',
-    title: 'Backend y bases de datos',
-    summary:
-      'APIs REST y lógica de negocio con Node.js, PHP y Laravel, con persistencia en MySQL, PostgreSQL y Supabase.',
+    title: { es: 'Backend y bases de datos', en: 'Backend & databases' },
+    summary: {
+      es: 'APIs REST y lógica de negocio con Node.js, PHP y Laravel, con persistencia en MySQL, PostgreSQL y Supabase.',
+      en: 'REST APIs and business logic with Node.js, PHP and Laravel, backed by MySQL, PostgreSQL and Supabase.',
+    },
     items: [
       { name: 'Node.js', icon: FaNodeJs },
       { name: 'PHP', icon: SiPhp },
@@ -70,9 +74,11 @@ export const skillGroups = [
   },
   {
     id: 'datos-bi',
-    title: 'Datos y BI',
-    summary:
-      'Análisis y visualización de datos con Python, pandas, NumPy y Matplotlib, y herramientas de Business Intelligence como Power BI, Excel, Tableau, KNIME y Apache Spark.',
+    title: { es: 'Datos y BI', en: 'Data & BI' },
+    summary: {
+      es: 'Análisis y visualización de datos con Python, pandas, NumPy y Matplotlib, y herramientas de Business Intelligence como Power BI, Excel, Tableau, KNIME y Apache Spark.',
+      en: 'Data analysis and visualisation with Python, pandas, NumPy and Matplotlib, and Business Intelligence tools such as Power BI, Excel, Tableau, KNIME and Apache Spark.',
+    },
     items: [
       { name: 'Python', icon: FaPython },
       { name: 'pandas', icon: SiPandas },
@@ -88,9 +94,11 @@ export const skillGroups = [
   },
   {
     id: 'ia-ml',
-    title: 'IA y Machine Learning',
-    summary:
-      'Modelos de machine learning y deep learning con scikit-learn, TensorFlow y Keras, visión por computador con YOLO y OpenCV, y aplicaciones basadas en LLMs con LangChain, Hugging Face y Ollama.',
+    title: { es: 'IA y Machine Learning', en: 'AI & Machine Learning' },
+    summary: {
+      es: 'Modelos de machine learning y deep learning con scikit-learn, TensorFlow y Keras, visión por computador con YOLO y OpenCV, y aplicaciones basadas en LLMs con LangChain, Hugging Face y Ollama.',
+      en: 'Machine learning and deep learning models with scikit-learn, TensorFlow and Keras, computer vision with YOLO and OpenCV, and LLM-based applications with LangChain, Hugging Face and Ollama.',
+    },
     items: [
       { name: 'scikit-learn', icon: SiScikitlearn },
       { name: 'TensorFlow', icon: SiTensorflow },
@@ -106,9 +114,11 @@ export const skillGroups = [
   },
   {
     id: 'devops-herramientas',
-    title: 'DevOps y herramientas',
-    summary:
-      'Control de versiones, integración continua y despliegue con Git, GitHub Actions, Docker, AWS, Vercel, Cloudflare Workers y Railway.',
+    title: { es: 'DevOps y herramientas', en: 'DevOps & tools' },
+    summary: {
+      es: 'Control de versiones, integración continua y despliegue con Git, GitHub Actions, Docker, AWS, Vercel, Cloudflare Workers y Railway.',
+      en: 'Version control, continuous integration and deployment with Git, GitHub Actions, Docker, AWS, Vercel, Cloudflare Workers and Railway.',
+    },
     items: [
       { name: 'Git', icon: FaGitAlt },
       { name: 'GitHub', icon: FaGithub },
