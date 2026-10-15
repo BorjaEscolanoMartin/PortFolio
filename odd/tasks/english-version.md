@@ -21,7 +21,7 @@ Delivery: ask-on-risk. Test runner: Vitest (`npm test`), plus `npm run lint`.
 | T5 | S1, S3 | inline | done | RED: missing module; GREEN: suite 41/41, lint clean |
 | T6 | S1, S3, S4 | inline | done | RED: 3 tests failing; GREEN: suite 45/45, lint clean |
 | T7 | S1 | inline | done | RED: 2 EN tests failing; GREEN: suite 48/48, lint clean |
-| T8 | S5 | inline | pending | |
+| T8 | S5 | inline | done | RED: og:locale:alternate missing; GREEN: suite 50/50, lint clean, build ok |
 
 T1: i18n infrastructure (context, `localize`, language switch in Header, provider).
 T2: Header, Hero and Footer texts. T3: About + `education.js`. T4: Skills + `skills.js`.
@@ -39,3 +39,4 @@ Route evidence: no writer trigger (no parallel units, no context backstop); pare
 - L6: T3: highlight helpers `Hl`/`Strong` live in `src/i18n/RichText.jsx` (react-refresh lint rule). EN education titles drafted: "Higher Technician Diploma in Web Application Development", "AI Development Course: From Zero to Production" (pending review, S7).
 - L7: T4: skill item names stay shared (they are technology names and React keys); "API REST" is kept as is in English.
 - L8: T6: status is a key with `STATUS_STYLES`; "Email Automation Matrícula" shown as "Enrolment Email Automation" in English; project titles that are proper names stay shared (pending review, S7).
+- L9: T8 done. All tasks done; pending: manual visual check in `npm run dev` (desktop + mobile, EN rotated labels "SCROLL DOWN"/"FOLLOW ME"), Borja review of the English copy (S7), and integration into master (Borja decides).
