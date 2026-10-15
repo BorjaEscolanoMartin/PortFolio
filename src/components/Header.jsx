@@ -1,6 +1,7 @@
 // src/components/Header.jsx
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import LanguageSwitch from './LanguageSwitch';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,8 +32,9 @@ export default function Header() {
           <a href="#contacto" className="hover:text-lime-400 transition">CONTACTO</a>
         </nav>
 
-        {/* Botón Hablemos desktop */}
-        <div className="hidden lg:block shrink-0">
+        {/* Selector de idioma y botón Hablemos desktop */}
+        <div className="hidden lg:flex items-center gap-4 shrink-0">
+          <LanguageSwitch />
           <a
             href="#contacto"
             className="bg-lime-400 text-black px-4 py-2 rounded-full font-bold whitespace-nowrap hover:bg-lime-300 transition"
@@ -104,6 +106,7 @@ export default function Header() {
             >
               HABLEMOS
             </a>
+            <LanguageSwitch className="self-center" />
           </nav>
         </div>
       )}
