@@ -52,13 +52,16 @@ describe('Header language switch', () => {
     expect(screen.getByRole('link', { name: "LET'S TALK" })).toHaveAttribute('href', '#contacto');
   });
 
-  it('shows the switch in the mobile menu too', async () => {
+  it('keeps the mobile switch outside the hamburger menu', async () => {
     const user = userEvent.setup();
     render(
       <LanguageProvider>
         <Header />
       </LanguageProvider>,
     );
+
+    // Desktop + mobile switches are both in the bar, with the menu closed.
+    expect(screen.getAllByRole('button', { name: 'View in English' })).toHaveLength(2);
 
     await user.click(screen.getByRole('button', { name: 'Toggle menu' }));
 

@@ -42,7 +42,7 @@ export default function Header() {
         </nav>
 
         {/* Selector de idioma y botón Hablemos desktop */}
-        <div className="hidden lg:flex items-center gap-4 shrink-0">
+        <div className="hidden lg:flex items-center gap-8 shrink-0">
           <LanguageSwitch />
           <a
             href="#contacto"
@@ -52,14 +52,17 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Botón hamburguesa móvil */}
-        <button
-          onClick={toggleMenu}
-          className="lg:hidden shrink-0 text-white hover:text-lime-400 transition-colors duration-200"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
+        {/* Selector de idioma (fuera del menú) y botón hamburguesa móvil */}
+        <div className="lg:hidden flex items-center gap-5 shrink-0">
+          <LanguageSwitch />
+          <button
+            onClick={toggleMenu}
+            className="text-white hover:text-lime-400 transition-colors duration-200"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Menú móvil */}
@@ -83,7 +86,6 @@ export default function Header() {
             >
               {t.nav.cta}
             </a>
-            <LanguageSwitch className="self-center" />
           </nav>
         </div>
       )}
