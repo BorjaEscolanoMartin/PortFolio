@@ -40,3 +40,4 @@ Route evidence: no writer trigger (no parallel units, no context backstop); pare
 - L7: T4: skill item names stay shared (they are technology names and React keys); "API REST" is kept as is in English.
 - L8: T6: status is a key with `STATUS_STYLES`; "Email Automation Matrícula" shown as "Enrolment Email Automation" in English; project titles that are proper names stay shared (pending review, S7).
 - L9: T8 done. All tasks done; pending: manual visual check in `npm run dev` (desktop + mobile, EN rotated labels "SCROLL DOWN"/"FOLLOW ME"), Borja review of the English copy (S7), and integration into master (Borja decides).
+- L10: Native review (reliability lens) approved and acknowledged on the branch (lineage review-1e7692565f051110). Non-blocking suggestion R3-status-label-fallback: an unknown status key renders an empty badge label (Projects.jsx:99-100); left as later work.
