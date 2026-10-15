@@ -15,7 +15,7 @@ Delivery: ask-on-risk. Test runner: Vitest (`npm test`), plus `npm run lint`.
 | ID | Specs | Route | Status | Evidence |
 |----|-------|-------|--------|----------|
 | T1 | S2, S3 | inline | done | RED: modules missing; GREEN: 14 new tests, suite 27/27, lint clean |
-| T2 | S1, S6 | inline | pending | |
+| T2 | S1, S6 | inline | done | RED: 4 EN tests failing; GREEN: suite 33/33, lint clean |
 | T3 | S1, S3 | inline | pending | |
 | T4 | S1, S3 | inline | pending | |
 | T5 | S1, S3 | inline | pending | |
@@ -34,3 +34,4 @@ Route evidence: no writer trigger (no parallel units, no context backstop); pare
 - L1 (2026-10-15): "vamos a hacer una nueva tarea, tenemos que incorporar la versión en inglés al proyecto, genera el plan"
 - L2: Answers: scope "Web completa en inglés"; access "Selector + ?lang=en (Recommended)". Plan approved.
 - L3: T1 decision: the URL always carries `?lang=<es|en>` after load, so a shared link opens in the same language regardless of the visitor's browser. Components keep working without a provider (context default = Spanish), so existing tests stay unchanged.
+- L4: T2: `ui.js` renamed to `ui.jsx` to hold rich text (Hero title word order differs). Header nav built from a `NAV_LINKS` list instead of duplicated markup. EN subtitle drafted as "Applied AI · Vocational Master's in AI & Big Data" (pending Borja's review, S7).

@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 import { skillGroups } from '../data/skills';
+import { useLanguage } from '../i18n/useLanguage';
 
 // Vista compacta del stack para el Hero: los primeros N items de cada grupo
 // de skills.js, repartidos en filas de como máximo 7 iconos (sin duplicar
@@ -14,6 +15,8 @@ for (let i = 0; i < heroTechnologies.length; i += ROW_SIZE) {
 }
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (    <section
         className="relative text-white min-h-[400px] md:min-h-[550px] lg:min-h-[550px] flex items-start pt-16 pb-16 overflow-hidden"
     >    {/* Lateral izquierdo */}
@@ -37,7 +40,7 @@ export default function Hero() {
         </div>
         {/* Texto DESLIZA ABAJO rotado */}
         <div>
-          <span className="block rotate-90 tracking-widest text-xs whitespace-nowrap origin-center text-gray-400">DESLIZA ABAJO</span>
+          <span className="block rotate-90 tracking-widest text-xs whitespace-nowrap origin-center text-gray-400">{t.hero.scrollDown}</span>
         </div>
         {/* Flecha */}
         <div>
@@ -49,7 +52,7 @@ export default function Hero() {
         </div>
       </div>      {/* Lateral derecho */}      
       <div className="absolute right-6 top-20 hidden lg:flex flex-col items-center w-8 z-40" style={{height: 'calc(100% - 80px - 320px)'}}><div className="flex flex-col items-center -ml-1">
-          <span className="rotate-90 text-xs tracking-widest text-gray-400 whitespace-nowrap origin-center">SÍGUEME</span>
+          <span className="rotate-90 text-xs tracking-widest text-gray-400 whitespace-nowrap origin-center">{t.hero.followMe}</span>
         </div>
         
         {/* Espaciador entre SÍGUEME y flecha */}
@@ -82,7 +85,7 @@ export default function Hero() {
           </a>
           <a
             href="#contacto"
-            aria-label="Ir a contacto"
+            aria-label={t.hero.goToContact}
             className="text-white hover:text-lime-400 transition-colors duration-300"
           >
             <FaEnvelope />
@@ -96,30 +99,30 @@ export default function Hero() {
           <div className="w-full md:w-2/3 flex items-center justify-center pr-2 lg:pl-16">
           <div className="text-center lg:text-left">
             <p className="uppercase text-sm tracking-widest text-gray-400 mb-4">
-              Disponible para incorporación inmediata
+              {t.hero.available}
             </p>            <h1 className="text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-extrabold leading-tight tracking-normal">
-              Desarrollador <span className="whitespace-nowrap">Full-Stack</span>
+              {t.hero.title}
               <span className="block text-lime-400 font-bold text-lg md:text-xl lg:text-lg xl:text-2xl mt-3 lg:whitespace-nowrap">
-                IA aplicada · Máster de FP en IA y Big Data
+                {t.hero.subtitle}
               </span>
             </h1>
             <p className="mt-6 text-lg text-white max-w-xl lg:pr-16 mx-auto lg:mx-0">
-              Aplicaciones web de principio a fin con React, TypeScript y Python (FastAPI), combinadas con datos e IA: análisis con SQL y Power BI, modelos de machine learning e integración de LLM. Con tests, CI y revisión de código en cada cambio.
+              {t.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start items-center">
               <a
                 href="#proyectos"
                 className="inline-block px-6 py-3 bg-lime-400 text-black font-semibold rounded-full hover:bg-lime-300 transition text-center w-50"
               >
-                Ver proyectos
+                {t.hero.viewProjects}
               </a>
               <a
-                href={`${import.meta.env.BASE_URL}Borja_Escolano_Martin_CV.pdf`}
-                download="Borja_Escolano_Martin_CV.pdf"
+                href={`${import.meta.env.BASE_URL}${t.hero.cvFile}`}
+                download={t.hero.cvFile}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-lime-400 text-lime-400 font-semibold rounded-full hover:bg-lime-400 hover:text-black transition w-50"
               >
                 <FaDownload className="text-sm" />
-                Descargar CV
+                {t.hero.downloadCv}
               </a>
             </div>          </div>
         </div>
@@ -129,7 +132,7 @@ export default function Hero() {
           <div className="relative">
             <img
               src={`${import.meta.env.BASE_URL}Yop.webp`}
-              alt="Foto de Borja Escolano, desarrollador full-stack y analista de datos"
+              alt={t.hero.photoAlt}
               loading="eager"
               fetchPriority="high"
               className="max-w-full h-auto max-h-[450px] object-cover"
