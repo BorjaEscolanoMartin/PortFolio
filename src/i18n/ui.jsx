@@ -70,6 +70,9 @@ export const ui = {
       subtitle:
         'Stack de desarrollo web full-stack combinado con análisis de datos, Business Intelligence e inteligencia artificial aplicada.',
     },
+    experience: {
+      title: 'EXPERIENCIA',
+    },
     footer: {
       tagline: 'Desarrollador Full-Stack · Datos e IA',
     },
@@ -134,6 +137,9 @@ export const ui = {
       title: 'SKILLS',
       subtitle:
         'A full-stack web development stack combined with data analysis, Business Intelligence and applied artificial intelligence.',
+    },
+    experience: {
+      title: 'EXPERIENCE',
     },
     footer: {
       tagline: 'Full-Stack Developer · Data & AI',

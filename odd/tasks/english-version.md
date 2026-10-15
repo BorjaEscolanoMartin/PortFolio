@@ -18,7 +18,7 @@ Delivery: ask-on-risk. Test runner: Vitest (`npm test`), plus `npm run lint`.
 | T2 | S1, S6 | inline | done | RED: 4 EN tests failing; GREEN: suite 33/33, lint clean |
 | T3 | S1, S3 | inline | done | RED: EN test failing; GREEN: suite 36/36, lint clean |
 | T4 | S1, S3 | inline | done | RED: 2 EN tests failing; GREEN: suite 38/38, lint clean |
-| T5 | S1, S3 | inline | pending | |
+| T5 | S1, S3 | inline | done | RED: missing module; GREEN: suite 41/41, lint clean |
 | T6 | S1, S3, S4 | inline | pending | |
 | T7 | S1 | inline | pending | |
 | T8 | S5 | inline | pending | |

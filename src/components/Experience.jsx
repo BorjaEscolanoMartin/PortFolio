@@ -1,28 +1,11 @@
 // src/components/Experience.jsx
-const experiences = [
-  {
-    role: "Desarrollador Full-Stack (colaboración)",
-    company: "TuyTu Tech",
-    period: "2026 – Actualidad",
-    bullets: [
-      "Plataforma de protección de imágenes frente a deepfakes, aplicando perturbaciones adversariales sobre modelos de IA generativa.",
-      "Desarrollo completo del producto web: la web pública (tuytu.tech) sobre un único Worker de Cloudflare con Supabase, y el dashboard en React/TypeScript con subida multi-archivo y procesado por lotes contra una API en Python/FastAPI.",
-      "Incorporación al equipo de Core para el desarrollo del algoritmo de protección preventiva.",
-      "Revisión de código en PR y mantenimiento de tests en CI con mocks de modelos de ML, en un flujo colaborativo en GitHub.",
-    ],
-  },
-  {
-    role: "Desarrollador Web en prácticas",
-    company: "Ayuntamiento de Novelda",
-    period: "Mayo – Julio 2025",
-    bullets: [
-      "Desarrollo y mantenimiento de webs de servicios municipales para distintas áreas (juventud, cultura...).",
-      "Maquetación y estructuración de contenidos con foco en la experiencia de usuario.",
-    ],
-  },
-];
+import { experiences } from '../data/experience';
+import { useLanguage } from '../i18n/useLanguage';
+import { localize } from '../i18n/localize';
 
 export default function Experience() {
+  const { lang, t } = useLanguage();
+
   return (
     <section className="text-white pt-8 pb-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -44,7 +27,7 @@ export default function Experience() {
 
         {/* Título principal */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 pt-20">
-          EXPERIENCIA
+          {t.experience.title}
         </h2>
 
         <div className="relative max-w-3xl mx-auto">
@@ -53,7 +36,7 @@ export default function Experience() {
 
           <div className="space-y-12">
             {experiences.map((exp) => (
-              <div key={exp.company} className="relative pl-12">
+              <div key={exp.id} className="relative pl-12">
                 {/* Punto del timeline */}
                 <span className="absolute left-0 top-2 w-4 h-4 bg-lime-400 rounded-full ring-4 ring-lime-400/20"></span>
 
@@ -61,18 +44,18 @@ export default function Experience() {
                   <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-lime-400 leading-snug">
-                        {exp.role}
+                        {localize(exp.role, lang)}
                       </h3>
-                      <p className="text-white font-semibold">{exp.company}</p>
+                      <p className="text-white font-semibold">{localize(exp.company, lang)}</p>
                     </div>
                     <p className="text-gray-400 text-sm font-semibold">
-                      {exp.period}
+                      {localize(exp.period, lang)}
                     </p>
                   </div>
 
                   <ul className="space-y-3 text-gray-300">
-                    {exp.bullets.map((bullet) => (
-                      <li key={bullet} className="flex">
+                    {localize(exp.bullets, lang).map((bullet, index) => (
+                      <li key={index} className="flex">
                         <span className="w-2 h-2 bg-lime-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
                         <span className="leading-relaxed">{bullet}</span>
                       </li>
