@@ -19,7 +19,7 @@ Delivery: ask-on-risk. Test runner: Vitest (`npm test`), plus `npm run lint`.
 | T3 | S1, S3 | inline | done | RED: EN test failing; GREEN: suite 36/36, lint clean |
 | T4 | S1, S3 | inline | done | RED: 2 EN tests failing; GREEN: suite 38/38, lint clean |
 | T5 | S1, S3 | inline | done | RED: missing module; GREEN: suite 41/41, lint clean |
-| T6 | S1, S3, S4 | inline | pending | |
+| T6 | S1, S3, S4 | inline | done | RED: 3 tests failing; GREEN: suite 45/45, lint clean |
 | T7 | S1 | inline | pending | |
 | T8 | S5 | inline | pending | |
 
@@ -38,3 +38,4 @@ Route evidence: no writer trigger (no parallel units, no context backstop); pare
 - L5 (2026-10-15): delivery choice "Una sola entrega": stay on feat/english-version until T8, one integration into master at the end.
 - L6: T3: highlight helpers `Hl`/`Strong` live in `src/i18n/RichText.jsx` (react-refresh lint rule). EN education titles drafted: "Higher Technician Diploma in Web Application Development", "AI Development Course: From Zero to Production" (pending review, S7).
 - L7: T4: skill item names stay shared (they are technology names and React keys); "API REST" is kept as is in English.
+- L8: T6: status is a key with `STATUS_STYLES`; "Email Automation Matrícula" shown as "Enrolment Email Automation" in English; project titles that are proper names stay shared (pending review, S7).

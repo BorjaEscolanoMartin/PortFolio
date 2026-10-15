@@ -73,6 +73,17 @@ export const ui = {
     experience: {
       title: 'EXPERIENCIA',
     },
+    projects: {
+      title: 'PROYECTOS',
+      subtitle:
+        'Una colección de proyectos que combina desarrollo web full-stack con análisis de datos e inteligencia artificial, desde aplicaciones completas hasta modelos y dashboards de datos.',
+      filters: { all: 'Todos', web: 'Web', 'datos-ia': 'Datos e IA' },
+      status: { completed: 'Completado', 'in-progress': 'En desarrollo', 'coming-soon': 'Próximamente' },
+      screenshotAlt: 'Captura del proyecto',
+      report: 'Informe (PDF)',
+      ctaQuestion: '¿Tienes un proyecto en mente? ¡Hablemos!',
+      ctaButton: 'Contactar',
+    },
     footer: {
       tagline: 'Desarrollador Full-Stack · Datos e IA',
     },
@@ -140,6 +151,17 @@ export const ui = {
     },
     experience: {
       title: 'EXPERIENCE',
+    },
+    projects: {
+      title: 'PROJECTS',
+      subtitle:
+        'A collection of projects combining full-stack web development with data analysis and artificial intelligence, from complete applications to models and data dashboards.',
+      filters: { all: 'All', web: 'Web', 'datos-ia': 'Data & AI' },
+      status: { completed: 'Completed', 'in-progress': 'In progress', 'coming-soon': 'Coming soon' },
+      screenshotAlt: 'Screenshot of',
+      report: 'Report (PDF)',
+      ctaQuestion: "Have a project in mind? Let's talk!",
+      ctaButton: 'Get in touch',
     },
     footer: {
       tagline: 'Full-Stack Developer · Data & AI',

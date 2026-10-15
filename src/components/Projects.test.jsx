@@ -6,6 +6,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import Projects from './Projects'
 import { projects } from '../data/projects'
+import { localize } from '../i18n/localize'
+import { renderInLanguage } from '../test-utils'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const publicDir = path.resolve(__dirname, '../../public')
@@ -27,7 +29,7 @@ describe('Projects', () => {
     const images = screen.getAllByAltText(/^Captura del proyecto/)
     expect(images).toHaveLength(expected.length)
     expected.forEach((p) => {
-      expect(screen.getByText(p.title)).toBeInTheDocument()
+      expect(screen.getByText(localize(p.title, 'es'))).toBeInTheDocument()
     })
   })
 
@@ -41,7 +43,7 @@ describe('Projects', () => {
     const images = screen.getAllByAltText(/^Captura del proyecto/)
     expect(images).toHaveLength(expected.length)
     expected.forEach((p) => {
-      expect(screen.getByText(p.title)).toBeInTheDocument()
+      expect(screen.getByText(localize(p.title, 'es'))).toBeInTheDocument()
     })
   })
 
@@ -60,7 +62,7 @@ describe('Projects', () => {
     const withReport = projects.find((p) => p.reportUrl)
     expect(withReport, 'hace falta al menos un proyecto con reportUrl').toBeTruthy()
 
-    const card = screen.getByText(withReport.title).closest('.group')
+    const card = screen.getByText(localize(withReport.title, 'es')).closest('.group')
     const link = within(card).getByRole('link', { name: /Informe \(PDF\)/ })
     expect(link).toHaveAttribute('href', withReport.reportUrl)
   })
@@ -70,6 +72,39 @@ describe('Projects', () => {
       const filename = path.basename(project.image)
       const filePath = path.join(publicDir, filename)
       expect(fs.existsSync(filePath), `falta ${filename} en public/`).toBe(true)
+    })
+  })
+
+  it('el color del estado depende de la clave, no del texto', () => {
+    render(<Projects />)
+    const [completedEs] = screen.getAllByText('Completado')
+    expect(completedEs).toHaveClass('text-green-400')
+    expect(screen.getByText('En desarrollo')).toHaveClass('text-yellow-400')
+  })
+})
+
+describe('Projects en inglés', () => {
+  it('traduce título, filtros, estados, enlaces y llamada a la acción', async () => {
+    const user = userEvent.setup()
+    renderInLanguage(<Projects />, 'en')
+
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('PROJECTS')
+    expect(screen.getAllByAltText(/^Screenshot of /)).toHaveLength(9)
+
+    const [completed] = screen.getAllByText('Completed')
+    expect(completed).toHaveClass('text-green-400')
+    expect(screen.getByText('In progress')).toHaveClass('text-yellow-400')
+
+    expect(screen.getByRole('link', { name: /Report \(PDF\)/ })).toBeInTheDocument()
+    expect(screen.getByText('RAG Chatbot with LangChain')).toBeInTheDocument()
+    expect(screen.getByText('Public demo with synthetic data, no sign-up required')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Get in touch/ })).toHaveAttribute('href', '#contacto')
+
+    await user.click(screen.getByRole('button', { name: 'Data & AI' }))
+    const expected = projects.filter((p) => p.categories.includes('datos-ia'))
+    expect(screen.getAllByAltText(/^Screenshot of /)).toHaveLength(expected.length)
+    expected.forEach((p) => {
+      expect(screen.getByText(localize(p.title, 'en'))).toBeInTheDocument()
     })
   })
 })
