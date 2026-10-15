@@ -3,6 +3,12 @@ import { render, screen } from '@testing-library/react';
 import Hero from './Hero';
 import Footer from './Footer';
 import { renderInLanguage } from '../test-utils';
+import { ui } from '../i18n/ui';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const publicDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../public');
 
 describe('Hero', () => {
   it('renders in Spanish by default', () => {
@@ -23,11 +29,25 @@ describe('Hero', () => {
     expect(screen.getByText('FOLLOW ME')).toBeInTheDocument();
   });
 
-  it('offers the Spanish CV in English, labelled as such', () => {
-    renderInLanguage(<Hero />, 'en');
-    const cv = screen.getByRole('link', { name: 'Download CV (Spanish)' });
-    expect(cv.getAttribute('href')).toMatch(/Borja_Escolano_Martin_CV\.pdf$/);
+  it('offers the Spanish CV in Spanish', () => {
+    render(<Hero />);
+    const cv = screen.getByRole('link', { name: 'Descargar CV' });
+    expect(cv.getAttribute('href')).toMatch(/\/Borja_Escolano_Martin_CV\.pdf$/);
     expect(cv).toHaveAttribute('download', 'Borja_Escolano_Martin_CV.pdf');
+  });
+
+  it('offers the English CV in English', () => {
+    renderInLanguage(<Hero />, 'en');
+    const cv = screen.getByRole('link', { name: 'Download CV' });
+    expect(cv.getAttribute('href')).toMatch(/\/Borja_Escolano_Martin_CV_EN\.pdf$/);
+    expect(cv).toHaveAttribute('download', 'Borja_Escolano_Martin_CV_EN.pdf');
+  });
+
+  it('every CV file offered exists in public/', () => {
+    for (const lang of ['es', 'en']) {
+      const file = path.join(publicDir, ui[lang].hero.cvFile);
+      expect(fs.existsSync(file), `missing ${ui[lang].hero.cvFile}`).toBe(true);
+    }
   });
 });
 

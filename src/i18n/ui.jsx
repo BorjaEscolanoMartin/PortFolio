@@ -7,8 +7,6 @@ const languageSwitch = {
   en: 'View in English',
 };
 
-const CV_FILE = 'Borja_Escolano_Martin_CV.pdf';
-
 export const ui = {
   es: {
     meta: {
@@ -39,7 +37,7 @@ export const ui = {
         'Aplicaciones web de principio a fin con React, TypeScript y Python (FastAPI), combinadas con datos e IA: análisis con SQL y Power BI, modelos de machine learning e integración de LLM. Con tests, CI y revisión de código en cada cambio.',
       viewProjects: 'Ver proyectos',
       downloadCv: 'Descargar CV',
-      cvFile: CV_FILE,
+      cvFile: 'Borja_Escolano_Martin_CV.pdf',
       photoAlt: 'Foto de Borja Escolano, desarrollador full-stack y analista de datos',
     },
     about: {
@@ -147,9 +145,8 @@ Un saludo.`,
       description:
         'End-to-end web applications with React, TypeScript and Python (FastAPI), combined with data and AI: analysis with SQL and Power BI, machine learning models and LLM integration. With tests, CI and code review on every change.',
       viewProjects: 'View projects',
-      // No English CV yet: the Spanish one is offered and labelled as such.
-      downloadCv: 'Download CV (Spanish)',
-      cvFile: CV_FILE,
+      downloadCv: 'Download CV',
+      cvFile: 'Borja_Escolano_Martin_CV_EN.pdf',
       photoAlt: 'Photo of Borja Escolano, full-stack developer and data analyst',
     },
     about: {

@@ -8,7 +8,7 @@ Delivery: ask-on-risk. Test runner: Vitest (`npm test`), plus `npm run lint`.
 - S3: No new dependencies: own React context + per-language dictionaries; data fields that need translation become `{ es, en }`.
 - S4: Project status becomes a key (`completed` / `in-progress` / `coming-soon`); the badge colour no longer depends on Spanish text.
 - S5: Anchors (`#sobre-mi`, ...) stay the same in both languages. `index.html` stays in Spanish; only `og:locale:alternate` `en_GB` is added.
-- S6 (assumption): there is no English CV; in EN the button reads "Download CV (Spanish)" and downloads the same PDF.
+- S6: "en la versión en inglés, vamos a modificar el botón de descarga quitando (Spanish) y a hacer que se descarge este Borja_Escolano_Martin_CV_EN" — EN button reads "Download CV" and downloads `public/Borja_Escolano_Martin_CV_EN.pdf`.
 - S7: English copy is drafted in professional British English; Borja reviews it before merge.
 
 ## Tasks
@@ -42,3 +42,4 @@ Route evidence: no writer trigger (no parallel units, no context backstop); pare
 - L9: T8 done. All tasks done; pending: manual visual check in `npm run dev` (desktop + mobile, EN rotated labels "SCROLL DOWN"/"FOLLOW ME"), Borja review of the English copy (S7), and integration into master (Borja decides).
 - L10: Native review (reliability lens) approved and acknowledged on the branch (lineage review-1e7692565f051110). Non-blocking suggestion R3-status-label-fallback: an unknown status key renders an empty badge label (Projects.jsx:99-100); left as later work.
 - L11 (2026-10-15): "vale, dos cosas, el botón de es en, se queda muy pegado al botón de hablemos, podemos separarlo un poco mas. y otra, cuando pasamos a menú hamburguesa, ese mismo botón lo podríamos dejar fuera del menú" → desktop gap 4→8; mobile switch moved to the bar next to the hamburger (test updated first, RED then GREEN, suite 50/50).
+- L12 (2026-10-15): "Te he puesto en la carpeta public, el cv en inglés, así que en la versión en inglés, vamos a modificar el botón de descarga quitando (Spanish) y a hacer que se descarge este Borja_Escolano_Martin_CV_EN" → S6 rewritten; Hero tests updated first (RED then GREEN), plus a test that every offered CV exists in public/; suite 52/52.
