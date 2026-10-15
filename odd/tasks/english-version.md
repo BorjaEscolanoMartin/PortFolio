@@ -20,7 +20,7 @@ Delivery: ask-on-risk. Test runner: Vitest (`npm test`), plus `npm run lint`.
 | T4 | S1, S3 | inline | done | RED: 2 EN tests failing; GREEN: suite 38/38, lint clean |
 | T5 | S1, S3 | inline | done | RED: missing module; GREEN: suite 41/41, lint clean |
 | T6 | S1, S3, S4 | inline | done | RED: 3 tests failing; GREEN: suite 45/45, lint clean |
-| T7 | S1 | inline | pending | |
+| T7 | S1 | inline | done | RED: 2 EN tests failing; GREEN: suite 48/48, lint clean |
 | T8 | S5 | inline | pending | |
 
 T1: i18n infrastructure (context, `localize`, language switch in Header, provider).

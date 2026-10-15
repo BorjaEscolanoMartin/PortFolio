@@ -1,22 +1,20 @@
 // src/components/Contact.jsx
 import { FaEnvelope, FaLinkedin, FaGithub, FaPhone, FaMapMarkerAlt, FaCopy, FaCheck, FaPaperPlane, FaGoogle, FaWhatsapp } from "react-icons/fa";
 import { useState } from 'react';
+import { useLanguage } from '../i18n/useLanguage';
 
 const EMAIL = "escolanomartinborja@gmail.com";
 const PHONE_INTL = "34628406752"; // sin '+' para wa.me
-const DEFAULT_SUBJECT = "Contacto desde tu Portfolio";
-const DEFAULT_BODY = `Hola Borja,
-
-Me pongo en contacto contigo desde tu portfolio porque...
-
-Un saludo.`;
 
 export default function Contact() {
   const [copySuccess, setCopySuccess] = useState(false);
+  const { t } = useLanguage();
+  const c = t.contact;
+  const { subject, body, whatsapp } = c.message;
 
-  const mailtoLink = `mailto:${EMAIL}?subject=${encodeURIComponent(DEFAULT_SUBJECT)}&body=${encodeURIComponent(DEFAULT_BODY)}`;
-  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${encodeURIComponent(DEFAULT_SUBJECT)}&body=${encodeURIComponent(DEFAULT_BODY)}`;
-  const whatsappLink = `https://wa.me/${PHONE_INTL}?text=${encodeURIComponent("Hola Borja, te escribo desde tu portfolio...")}`;
+  const mailtoLink = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const whatsappLink = `https://wa.me/${PHONE_INTL}?text=${encodeURIComponent(whatsapp)}`;
 
   const handleCopyEmail = async () => {
     try {
@@ -61,13 +59,12 @@ export default function Contact() {
 
         {/* Título principal */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pt-20">
-          CONTACTO
+          {c.title}
         </h2>
 
         {/* Subtítulo */}
         <p className="text-center text-gray-400 text-lg mb-20 max-w-3xl mx-auto">
-          ¿Tienes un proyecto en mente? Me encantaría colaborar contigo.
-          Ponte en contacto y construyamos algo increíble juntos.
+          {c.subtitle}
         </p>
 
         {/* Contenido principal - Grid de 2 columnas */}
@@ -76,11 +73,10 @@ export default function Contact() {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">
-                Información de Contacto
+                {c.infoTitle}
               </h3>
               <p className="text-gray-400 mb-8">
-                Estoy disponible para proyectos freelance, colaboraciones y oportunidades laborales.
-                No dudes en contactarme a través de cualquiera de estos medios.
+                {c.infoText}
               </p>
             </div>
 
@@ -92,7 +88,7 @@ export default function Contact() {
                   <FaEnvelope className="text-lime-400 text-xl" />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">Email</p>
+                  <p className="text-gray-400 text-sm">{c.emailLabel}</p>
                   <a
                     href={`mailto:${EMAIL}`}
                     className="text-white hover:text-lime-400 transition-colors break-all"
@@ -108,7 +104,7 @@ export default function Contact() {
                   <FaPhone className="text-lime-400 text-xl" />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">Teléfono</p>
+                  <p className="text-gray-400 text-sm">{c.phoneLabel}</p>
                   <a
                     href="tel:+34628406752"
                     className="text-white hover:text-lime-400 transition-colors"
@@ -124,15 +120,15 @@ export default function Contact() {
                   <FaMapMarkerAlt className="text-lime-400 text-xl" />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">Ubicación</p>
-                  <p className="text-white">03660 Novelda, Alicante, España</p>
+                  <p className="text-gray-400 text-sm">{c.locationLabel}</p>
+                  <p className="text-white">{c.location}</p>
                 </div>
               </div>
             </div>
 
             {/* Redes sociales */}
             <div className="pt-6">
-              <h4 className="text-lg font-semibold text-white mb-4">Sígueme en</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">{c.followMe}</h4>
               <div className="flex gap-4">
                 <a
                   href="https://www.linkedin.com/in/borja-escolano-martin/"
@@ -159,11 +155,10 @@ export default function Contact() {
           {/* Columna derecha - Acciones directas de contacto */}
           <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8 flex flex-col">
             <h3 className="text-2xl font-bold text-white mb-3">
-              Escríbeme directamente
+              {c.directTitle}
             </h3>
             <p className="text-gray-400 mb-8">
-              Elige la vía que prefieras. Todos los botones abren un mensaje ya preparado
-              para que solo tengas que escribir lo que necesitas y enviar.
+              {c.directText}
             </p>
 
             <div className="space-y-4">
@@ -173,7 +168,7 @@ export default function Contact() {
                 className="w-full px-6 py-4 rounded-lg font-semibold bg-lime-400 text-black hover:bg-lime-300 transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02] shadow-lg shadow-lime-400/10"
               >
                 <FaPaperPlane className="text-sm" />
-                Enviar email
+                {c.sendEmail}
               </a>
 
               {/* Abrir Gmail en el navegador */}
@@ -184,7 +179,7 @@ export default function Contact() {
                 className="w-full px-6 py-4 rounded-lg font-semibold bg-gray-900/60 border border-gray-600/60 text-white hover:bg-lime-400/10 hover:border-lime-400/50 hover:text-lime-400 transition-all duration-300 flex items-center justify-center gap-3"
               >
                 <FaGoogle className="text-sm" />
-                Abrir en Gmail
+                {c.openGmail}
               </a>
 
               {/* Copiar email */}
@@ -196,12 +191,12 @@ export default function Contact() {
                 {copySuccess ? (
                   <>
                     <FaCheck className="text-sm" />
-                    ¡Email copiado!
+                    {c.copied}
                   </>
                 ) : (
                   <>
                     <FaCopy className="text-sm" />
-                    Copiar dirección
+                    {c.copy}
                   </>
                 )}
               </button>
@@ -214,13 +209,13 @@ export default function Contact() {
                 className="w-full px-6 py-4 rounded-lg font-semibold bg-gray-900/60 border border-gray-600/60 text-white hover:bg-lime-400/10 hover:border-lime-400/50 hover:text-lime-400 transition-all duration-300 flex items-center justify-center gap-3"
               >
                 <FaWhatsapp className="text-sm" />
-                Escribir por WhatsApp
+                {c.whatsapp}
               </a>
             </div>
 
             {/* Email visible como fallback */}
             <div className="mt-8 pt-6 border-t border-gray-700/50 text-center">
-              <p className="text-gray-500 text-sm mb-1">O escríbeme a</p>
+              <p className="text-gray-500 text-sm mb-1">{c.orWriteTo}</p>
               <a
                 href={`mailto:${EMAIL}`}
                 className="text-lime-400 font-medium hover:text-lime-300 transition-colors break-all"

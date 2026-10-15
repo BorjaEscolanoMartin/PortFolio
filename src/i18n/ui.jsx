@@ -84,6 +84,37 @@ export const ui = {
       ctaQuestion: '¿Tienes un proyecto en mente? ¡Hablemos!',
       ctaButton: 'Contactar',
     },
+    contact: {
+      title: 'CONTACTO',
+      subtitle:
+        '¿Tienes un proyecto en mente? Me encantaría colaborar contigo. Ponte en contacto y construyamos algo increíble juntos.',
+      infoTitle: 'Información de Contacto',
+      infoText:
+        'Estoy disponible para proyectos freelance, colaboraciones y oportunidades laborales. No dudes en contactarme a través de cualquiera de estos medios.',
+      emailLabel: 'Email',
+      phoneLabel: 'Teléfono',
+      locationLabel: 'Ubicación',
+      location: '03660 Novelda, Alicante, España',
+      followMe: 'Sígueme en',
+      directTitle: 'Escríbeme directamente',
+      directText:
+        'Elige la vía que prefieras. Todos los botones abren un mensaje ya preparado para que solo tengas que escribir lo que necesitas y enviar.',
+      sendEmail: 'Enviar email',
+      openGmail: 'Abrir en Gmail',
+      copy: 'Copiar dirección',
+      copied: '¡Email copiado!',
+      whatsapp: 'Escribir por WhatsApp',
+      orWriteTo: 'O escríbeme a',
+      message: {
+        subject: 'Contacto desde tu Portfolio',
+        body: `Hola Borja,
+
+Me pongo en contacto contigo desde tu portfolio porque...
+
+Un saludo.`,
+        whatsapp: 'Hola Borja, te escribo desde tu portfolio...',
+      },
+    },
     footer: {
       tagline: 'Desarrollador Full-Stack · Datos e IA',
     },
@@ -162,6 +193,37 @@ export const ui = {
       report: 'Report (PDF)',
       ctaQuestion: "Have a project in mind? Let's talk!",
       ctaButton: 'Get in touch',
+    },
+    contact: {
+      title: 'CONTACT',
+      subtitle:
+        "Have a project in mind? I'd love to work with you. Get in touch and let's build something great together.",
+      infoTitle: 'Contact Information',
+      infoText:
+        "I'm available for freelance projects, collaborations and job opportunities. Feel free to reach out through any of these channels.",
+      emailLabel: 'Email',
+      phoneLabel: 'Phone',
+      locationLabel: 'Location',
+      location: '03660 Novelda, Alicante, Spain',
+      followMe: 'Follow me on',
+      directTitle: 'Write to me directly',
+      directText:
+        'Pick whichever option you prefer. Every button opens a ready-made message, so you only need to write what you need and send it.',
+      sendEmail: 'Send email',
+      openGmail: 'Open in Gmail',
+      copy: 'Copy address',
+      copied: 'Email copied!',
+      whatsapp: 'Message on WhatsApp',
+      orWriteTo: 'Or write to me at',
+      message: {
+        subject: 'Contact from your portfolio',
+        body: `Hi Borja,
+
+I'm getting in touch through your portfolio because...
+
+Best regards.`,
+        whatsapp: "Hi Borja, I'm writing to you from your portfolio...",
+      },
     },
     footer: {
       tagline: 'Full-Stack Developer · Data & AI',
