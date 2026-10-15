@@ -1,5 +1,7 @@
 // User interface texts, one dictionary per language.
 // Rich text (highlighted words, word order) is stored as JSX per language.
+import { Hl, Strong } from './RichText';
+
 const languageSwitch = {
   es: 'Ver en español',
   en: 'View in English',
@@ -40,6 +42,29 @@ export const ui = {
       cvFile: CV_FILE,
       photoAlt: 'Foto de Borja Escolano, desarrollador full-stack y analista de datos',
     },
+    about: {
+      title: 'SOBRE MÍ',
+      paragraphs: [
+        <>
+          <Strong>Desarrollador Full-Stack</Strong> con experiencia práctica en aplicaciones web de principio a fin: frontend con <Hl>React</Hl> y <Hl>TypeScript</Hl>, APIs con <Hl>Node.js</Hl>, <Hl>Python (FastAPI)</Hl> y <Hl>PHP (Laravel)</Hl>, bases de datos <Hl>SQL</Hl> y despliegue con <Hl>Docker</Hl>.
+        </>,
+        <>
+          Trabajo con <Hl>decisiones de diseño documentadas</Hl> antes del código, <Hl>test-first</Hl>, PR pequeños con <Hl>CI</Hl> y <Hl>revisión independiente</Hl> antes de cada merge. El código crítico (autenticación, permisos y datos de usuario) pasa además por una <Hl>revisión de seguridad</Hl> dedicada.
+        </>,
+        <>
+          He completado el <Strong>Máster de FP en Inteligencia Artificial y Big Data</Strong>: análisis y visualización de datos con <Hl>SQL</Hl>, <Hl>Python</Hl> y <Hl>Power BI</Hl>, <Hl>machine learning</Hl> con scikit-learn y TensorFlow, y aplicaciones con <Hl>LLMs (RAG)</Hl> y <Hl>visión por computador</Hl>.
+        </>,
+      ],
+      educationTitle: 'Formación Académica',
+      specialisationTitle: 'Especialización',
+      specialisation: [
+        'Desarrollo Full-Stack (Frontend + Backend)',
+        'APIs, bases de datos y despliegue',
+        'Test-first, CI y revisión de código',
+        'Análisis de datos y BI: SQL, Python, Power BI',
+        'Machine Learning e IA aplicada: LLMs, visión por computador',
+      ],
+    },
     footer: {
       tagline: 'Desarrollador Full-Stack · Datos e IA',
     },
@@ -76,6 +101,29 @@ export const ui = {
       downloadCv: 'Download CV (Spanish)',
       cvFile: CV_FILE,
       photoAlt: 'Photo of Borja Escolano, full-stack developer and data analyst',
+    },
+    about: {
+      title: 'ABOUT ME',
+      paragraphs: [
+        <>
+          <Strong>Full-Stack Developer</Strong> with hands-on experience building end-to-end web applications: frontend with <Hl>React</Hl> and <Hl>TypeScript</Hl>, APIs with <Hl>Node.js</Hl>, <Hl>Python (FastAPI)</Hl> and <Hl>PHP (Laravel)</Hl>, <Hl>SQL</Hl> databases and deployment with <Hl>Docker</Hl>.
+        </>,
+        <>
+          I work with <Hl>documented design decisions</Hl> before writing code, <Hl>test-first</Hl>, small PRs with <Hl>CI</Hl> and <Hl>independent review</Hl> before every merge. Critical code (authentication, permissions and user data) also goes through a dedicated <Hl>security review</Hl>.
+        </>,
+        <>
+          I have completed the <Strong>Vocational Master&apos;s in Artificial Intelligence and Big Data</Strong>: data analysis and visualisation with <Hl>SQL</Hl>, <Hl>Python</Hl> and <Hl>Power BI</Hl>, <Hl>machine learning</Hl> with scikit-learn and TensorFlow, and applications with <Hl>LLMs (RAG)</Hl> and <Hl>computer vision</Hl>.
+        </>,
+      ],
+      educationTitle: 'Education',
+      specialisationTitle: 'Specialisation',
+      specialisation: [
+        'Full-Stack Development (Frontend + Backend)',
+        'APIs, databases and deployment',
+        'Test-first, CI and code review',
+        'Data analysis and BI: SQL, Python, Power BI',
+        'Machine Learning and applied AI: LLMs, computer vision',
+      ],
     },
     footer: {
       tagline: 'Full-Stack Developer · Data & AI',

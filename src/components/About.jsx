@@ -1,12 +1,16 @@
 // src/components/About.jsx
 import { education } from '../data/education';
+import { useLanguage } from '../i18n/useLanguage';
+import { localize } from '../i18n/localize';
 
 export default function About() {
+  const { lang, t } = useLanguage();
+
   return (
     <section className="text-white pt-24 pb-16 px-6">
       <div className="max-w-6xl mx-auto">        {/* Título principal */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">
-          SOBRE MÍ
+          {t.about.title}
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -17,17 +21,9 @@ export default function About() {
             </h3>
             
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
-              <p>
-                <span className="text-white font-semibold">Desarrollador Full-Stack</span> con experiencia práctica en aplicaciones web de principio a fin: frontend con <span className="text-lime-400">React</span> y <span className="text-lime-400">TypeScript</span>, APIs con <span className="text-lime-400">Node.js</span>, <span className="text-lime-400">Python (FastAPI)</span> y <span className="text-lime-400">PHP (Laravel)</span>, bases de datos <span className="text-lime-400">SQL</span> y despliegue con <span className="text-lime-400">Docker</span>.
-              </p>
-
-              <p>
-                Trabajo con <span className="text-lime-400">decisiones de diseño documentadas</span> antes del código, <span className="text-lime-400">test-first</span>, PR pequeños con <span className="text-lime-400">CI</span> y <span className="text-lime-400">revisión independiente</span> antes de cada merge. El código crítico (autenticación, permisos y datos de usuario) pasa además por una <span className="text-lime-400">revisión de seguridad</span> dedicada.
-              </p>
-
-              <p>
-                He completado el <span className="text-white font-semibold">Máster de FP en Inteligencia Artificial y Big Data</span>: análisis y visualización de datos con <span className="text-lime-400">SQL</span>, <span className="text-lime-400">Python</span> y <span className="text-lime-400">Power BI</span>, <span className="text-lime-400">machine learning</span> con scikit-learn y TensorFlow, y aplicaciones con <span className="text-lime-400">LLMs (RAG)</span> y <span className="text-lime-400">visión por computador</span>.
-              </p>
+              {t.about.paragraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
 
@@ -41,14 +37,14 @@ export default function About() {
                   </svg>
                 </div>
                 <h4 className="text-xl font-bold text-white">
-                  Formación Académica
+                  {t.about.educationTitle}
                 </h4>
               </div>
               <ul className="space-y-3">
                 {education.map((item) => (
                   <li key={item.id}>
                     <p className="text-lime-400 font-semibold leading-snug">
-                      {item.title}
+                      {localize(item.title, lang)}
                     </p>
                     {item.institution && (
                       <p className="text-gray-400 text-sm">
@@ -56,7 +52,7 @@ export default function About() {
                       </p>
                     )}
                     <p className="text-gray-500 text-sm">
-                      {item.years} · {item.detail}
+                      {item.years} · {localize(item.detail, lang)}
                     </p>
                   </li>
                 ))}
@@ -66,29 +62,15 @@ export default function About() {
             {/* Tarjeta de especialización */}
             <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-lime-400/30 transition-all duration-300">
               <h4 className="text-xl font-bold text-white mb-3">
-                Especialización
+                {t.about.specialisationTitle}
               </h4>
               <ul className="space-y-2 text-gray-300">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  Desarrollo Full-Stack (Frontend + Backend)
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  APIs, bases de datos y despliegue
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  Test-first, CI y revisión de código
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  Análisis de datos y BI: SQL, Python, Power BI
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
-                  Machine Learning e IA aplicada: LLMs, visión por computador
-                </li>
+                {t.about.specialisation.map((item) => (
+                  <li key={item} className="flex items-center">
+                    <span className="w-2 h-2 bg-lime-400 rounded-full mr-3"></span>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
