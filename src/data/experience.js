@@ -13,13 +13,13 @@ export const experiences = [
       es: [
         'Plataforma de protección de imágenes frente a deepfakes, aplicando perturbaciones adversariales sobre modelos de IA generativa.',
         'Desarrollo completo del producto web: la web pública (tuytu.tech) sobre un único Worker de Cloudflare con Supabase, y el dashboard en React/TypeScript con subida multi-archivo y procesado por lotes contra una API en Python/FastAPI.',
-        'Incorporación al equipo de Core para el desarrollo del algoritmo de protección preventiva.',
+        'Incorporación al equipo de Core para el desarrollo de la protección preventiva.',
         'Revisión de código en PR y mantenimiento de tests en CI con mocks de modelos de ML, en un flujo colaborativo en GitHub.',
       ],
       en: [
         'Image protection platform against deepfakes, applying adversarial perturbations to generative AI models.',
         'End-to-end development of the web product: the public site (tuytu.tech) on a single Cloudflare Worker with Supabase, and the React/TypeScript dashboard with multi-file upload and batch processing against a Python/FastAPI API.',
-        'Joined the Core team to develop the preventive protection algorithm.',
+        'Joined the Core team to develop the preventive protection.',
         'Code review on pull requests and maintenance of CI tests with mocked ML models, in a collaborative GitHub workflow.',
       ],
     },
